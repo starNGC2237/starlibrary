@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">app_users</string>
+    <string name="accountManger_users">账号管理</string>
+    <string name="userInfo_users">个人信息</string>
+    <string name="nickName_users">昵称</string>
+    <string name="headPic_users">头像</string>
+    <string name="password_users">密码</string>
+    <string name="phone_users">手机号</string>
+    <string name="bind_users">绑定图书证</string>
+    <string name="userName_users">用户名</string>
+    <string name="changeNickName">修改昵称</string>
+    <string name="changePass">修改密码</string>
+    <string name="users_save">保存</string>
+    <string name="changePhone">修改手机号</string>
+    <string name="changeHeadPic">修改头像</string>
+    <string name="changeUserName">用户名是账号的唯一标识，无法修改。</string>
+    <string name="changeBind">图书证号绑定后无法修改，如需修改请联系管理员。</string>
+    <string name="changeUserPhone">手机号无法修改。</string>
+    <string name="pass_past">原密码：</string>
+    <string name="pass_now">现密码：</string>
+    <string name="exit_users">退出登录</string>
+    <string name="delete_users">删除</string>
+    <string name="exit_APP_users">退出StarLibrary</string>
+</resources>

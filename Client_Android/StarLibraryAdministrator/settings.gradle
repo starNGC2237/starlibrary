@@ -1,0 +1,9 @@
+include ':app_orders'
+include ':app_bookmanagement'
+include ':app_managers'
+include ':app_users'
+include ':app_base'
+include ':app_login'
+include ':mylibrary'
+include ':app'
+rootProject.name = "StarLibrary管理员端"

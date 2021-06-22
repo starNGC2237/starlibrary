@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">app_book</string>
+    <string name="cancel_book">取消</string>
+    <string name="book_search_tip">没有找到书籍哦</string>
+</resources>

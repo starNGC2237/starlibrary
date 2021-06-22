@@ -1,0 +1,59 @@
+/*
+    此为右导航栏，乃瞬移之神器，天上地下，去去便来
+*/
+.anchor-nav{
+    position: fixed;
+    right: 1vw;
+    top: 40vh;
+    z-index: 460;
+    width: 10vw;
+    text-align: center;
+}
+/*
+    anchor：无下划线、黑色、访问后不变、成为焦点时不变
+*/
+.anchor{
+    color:black;
+    text-decoration: none;
+}
+/*
+    blue_href：无下划线、蓝色、访问后颜色样式不变、成为焦点时变成红色同时有下划线
+*/
+.blue_href:link{
+    color:darkblue;
+    text-decoration: none;
+}
+.blue_href:visited{
+    color: darkblue;
+    text-decoration: none;
+}
+.blue_href:hover{
+    color: red;
+    text-decoration: underline;
+}
+/*
+    blue_clock：无下划线、蓝色、访问后颜色样式不变、成为焦点时变成红色没有下划线（网页上的时钟定制款）
+*/
+.blue_clock:link{
+    color:blue;
+    text-decoration: none;
+}
+.blue_clock:visited{
+    color:blue;
+    text-decoration: none;
+}
+.blue_clock:hover{
+    color:red;
+    text-decoration: none;
+}
+/*
+    footer：无下划线、白色、访问后不变、成为焦点时不变
+*/
+.footer{
+    color:#ffffff;
+    text-decoration: none;
+}
+.blue{
+    color:darkblue;
+    text-decoration: none;
+}

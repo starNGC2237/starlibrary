@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:paddingTop="16dp"
+    android:orientation="vertical"
+    android:background="@drawable/bg_ra">
+
+    <TextView
+        android:id="@+id/tv_title"
+        android:textSize="20sp"
+        android:textColor="@color/_xpopup_title_color"
+        android:lines="1"
+        android:ellipsize="end"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal" />
+
+    <com.kaelli.niceratingbar.NiceRatingBar
+        android:id="@+id/NiceRatingBar_stars"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:paddingTop="15dp"
+        android:paddingBottom="15dp"
+        app:nrb_rating="4"
+        app:nrb_ratingStatus="Enable"
+        app:nrb_starEmptyResource="@drawable/star_outlined"
+        app:nrb_starFullResource="@drawable/star"
+        app:nrb_starHalfResource="@drawable/star_half"
+        app:nrb_starImageHeight="30dp"
+        app:nrb_starImageWidth="30dp"
+        app:nrb_starTotal="5" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:gravity="right"
+        android:orientation="horizontal">
+        <TextView
+            android:id="@+id/tv_cancel"
+            android:textSize="16sp"
+            android:text="返回"
+            android:textColor="#666666"
+            android:background="?android:attr/selectableItemBackground"
+            android:gravity="center"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent" />
+
+        <View
+            android:layout_width=".5dp"
+            android:id="@+id/xpopup_divider2"
+            android:background="@color/_xpopup_list_divider"
+            android:layout_height="match_parent"/>
+
+        <TextView
+            android:textSize="16sp"
+            android:id="@+id/tv_confirm"
+            android:text="确定"
+            android:gravity="center"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:background="?android:attr/selectableItemBackground"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent" />
+    </LinearLayout>
+</LinearLayout>

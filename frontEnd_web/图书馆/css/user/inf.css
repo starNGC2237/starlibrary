@@ -1,0 +1,23 @@
+body{
+    margin:0;
+    padding:0;
+    overflow-y:scroll;
+    overflow-x:hidden;
+}
+.headPicture{
+    width: 2vmin;
+    height: 2vmin;
+    background-repeat: no-repeat;
+    background-position: center; 
+    background-size: cover; 
+    min-width:5px;
+    min-height: 5px;
+}
+.li_margin{
+    margin-right: 0.5vw;
+    font-size: 2vmin;
+}
+.li_footer{
+    margin-top: 1vh;
+    font-size: 2vmin;
+}

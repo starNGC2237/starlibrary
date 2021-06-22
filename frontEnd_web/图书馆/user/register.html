@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../css/anchor.css">
+    <link rel="stylesheet" type="text/css" href="../css/user/register.css">
+    <title>注册</title>
+</head>
+<body>
+    <div style="width: 100vw;height: 100vh;background-image: url();background-repeat: no-repeat;background-size: cover;background-position: center;min-height: 300px;"id="anchor1">
+        <!--头部导航栏-->
+        <div style="width: 100vw;height: 12vh;display: flex; align-items: center;justify-content: space-between;">
+        <span style="font-size: 5vmin;margin-left:15vw;color: white;font-family: Georgia, 'Times New Roman', Times, serif;"><a href="https://starlibrary.online" class="footer">StarLibrary</a></span>
+            <div style="margin-right: 15vw;">
+                <ul style="list-style: none;margin: 0;padding: 0;display: flex;justify-content: flex-start; align-items: center;" >
+                    <div class="headPicture" style="background-image: url(../img/white/int.png);">
+                    </div>
+                    <li class="li_margin">
+                        <a href="../English/index.html" class="footer">English</a>
+                    </li>
+                    <div class="headPicture" style="background-image: url(../img/white/time.png);">
+                    </div>
+                    <li class="li_margin">
+                        <a href="https://starlibrary.online/clock.html" id="time" class="footer"id="time" >北京时间</a>
+                    </li>
+                    <div class="headPicture" style="background-image: url(../img/white/user.png);">
+                    </div>
+                    <li class="li_margin">
+                        <a  href="" class="footer" id="loginCookie_check" >登录</a>
+                    </li>
+                    <div class="headPicture" style="background-image: url(../img/white/feedBack.png);" >
+                    </div>
+                    <li class="li_margin">
+                        <a href="../feedBack.html" class="footer" >反馈</a>
+                    </li>
+                    <div class="headPicture" style="background-image: url(../img/white/search.png);">
+                    </div>
+                </ul>
+            </div>
+        </div>
+        <div style="width: 80vw;height: 85vh;margin: 0 auto;display: flex;flex-direction: column;justify-content: space-between;margin-top: 3vh;">
+            <div style="text-align: center;">
+                <h1 style="margin-top: 0; margin-bottom: 8vmin; color: orangered;font-size: 6vmin;">欢迎注册!</h1>
+            </div>
+            <form method="GET" onsubmit="return alertError();" id="formLogin">
+                <div style="width: 80vw;height: 80vh;display: flex;flex-direction: column;align-items: center;">
+                    <input type="text" name="userName" autocomplete="off" placeholder="用户名" class="input_text_register" id="userName">
+                    <p id="userNameTip" class="input_text_p">&nbsp;</p>
+                    <input type="password" name="userPassword" autocomplete="off" placeholder="密码（6-16个字符组成，区分大小写）" class="input_text_register"  id="userPassword">
+                    <p class="input_text_p" id="userPasswordTip">&nbsp;</p>
+                    <input type="number" class="input_text_register" autocomplete="off" placeholder="手机号"  name="userPhone">
+                    <p class="input_text_p">&nbsp;</p>
+                    <input type="submit" value="注册"class="input_text_registerButton" style="cursor: pointer;">
+                    <p style="text-align: right;width: 25vw;"><a href="login.html" class="darkblue" >已有账号？登录>></a></p>
+                </div>
+            </form>
+           
+        </div>
+    </div>
+    <!--底部导航栏-->
+    <div style="width: 100vw;height: 40vh;background-color:#181818;display: flex; align-items: center; justify-content: space-between;color: white; min-height: 190px;">
+        <div  style="height: 30vh; width: 35vw;margin-left: 15vw;">
+            <ul style="list-style: none;font-size: 2vmin;padding: 0;">
+                <li style="margin-bottom: 2vh;">
+                    <span style="font-size: 5vmin;font-family: Georgia, 'Times New Roman', Times, serif;" >
+                       <a href="https://starlibrary.online" class="footer" >StarLibrary</a> 
+                    </span> 
+                </li>
+                <li class="li_footer">
+                    <span>
+                       © 2020-2021 <a href="https://starlibrary.online" class="footer" >starlibrary.com </a>版权所有
+                    </span> 
+                </li>
+                <li class="li_footer">
+                    <span>
+                        本网站仅供学习使用
+                    </span> 
+                </li>
+                <li class="li_footer">
+                    <span>
+                        ICP证：<a href="http://www.beian.miit.gov.cn" class="footer" >津ICP备20000024号</a> 
+                    </span>  
+                </li>
+                <li class="li_footer">
+                    <img src="../img/备案图标.png" alt="" height="15px"  >
+                    <span>
+                        <a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?spm=5176.12825654.7y9jhqsfz.111.54212c4aBH6Hwq" class="footer">苏公网安备 32021402001231号</a> 
+                    </span> 
+                </li>
+            </ul>
+        </div>
+        <div  style="height: 30vh; width: 35vw;margin-right: 15vw; display: flex; justify-content: flex-end;">
+            <div style=" margin: 0 auto;margin-top: 5vh;font-size: 2vmin;">
+                <dl>
+                    <dt id="first" >
+                        本周开馆音乐：
+                    </dt>
+                    <dd>
+                        Xenogenesis
+                    </dd>
+                </dl>
+                <dl>
+                    <dt id="last"> 
+                        本周闭馆音乐：
+                    </dt>
+                    <dd>
+                        Dreamer
+                    </dd>
+                </dl>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="../js/tools/jquery-3.4.1.js"></script>
+<script src="../js/cookie.js"></script>
+<script src="../js/tools/alertError.js"></script>
+<script src="../js/tools/register.js"></script>
+<!--顶部导航栏和底部导航栏的js-->
+<script>
+    //中文的日期
+    function startTime(){
+        var today=new Date();
+        var year=today.getFullYear();
+        var month=today.getMonth()+1;
+        var day=today.getDate();
+        var hours=today.getHours();
+        var minutes=today.getMinutes();
+        var seconds=today.getSeconds();// add a zero in front of numbers<10
+        minutes=checkTime(minutes);
+        seconds=checkTime(seconds);
+        $("#time").html(year+"年"+month+"月"+day+"日"+hours+":"+minutes+":"+seconds);
+        setInterval("startTime()",1000)
+    }
+    function checkTime(i){
+        if (i<10) {
+            i="0" + i;
+        }
+        return i;
+    }
+
+    //加载在这里！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！
+    $(document).ready(function(){
+        setInterval("startTime()",1000);
+        weeks();
+        checkCookie("userName");
+    });
+    //这里是检查登录情况！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！
+    function checkCookie(cname){
+        var user = getCookie(cname);
+        var nickName=getCookie("nickName");
+        if (user != "") {
+            document.getElementById('loginCookie_check').innerHTML=nickName;
+            document.getElementById('loginCookie_check').href="https://starlibrary.online/user/message.html";
+        }else{
+            document.getElementById('loginCookie_check').href="https://starlibrary.online/user/login.html";
+        }
+    }
+    function weeks(){
+        var today=new Date();
+        var first_day=first(today);
+        var first_mouth=first_day.getMonth()+1;
+        first_mouth=checkTime(first_mouth);
+        var first_date=first_day.getDate();
+        first_date=checkTime(first_date);
+        var last_day=last(today);
+        var last_mouth=last_day.getMonth()+1;
+        last_mouth=checkTime(last_mouth);
+        var last_date=last_day.getDate();
+        last_date=checkTime(last_date);
+        document.getElementById('first').innerHTML="本周("+first_mouth+"."+first_date+"~"    +last_mouth+"."+last_date+")开馆音乐：";
+        document.getElementById('last').innerHTML="本周("+first_mouth+"."+first_date+"~" +last_mouth+"."+last_date+")闭馆音乐：";
+    }
+    function first(today){
+        var week = today.getDay();
+        if(week==0){
+            week=7;
+        }
+        today.setDate(today.getDate()-week+1);
+        return today;
+    }
+    function last(today){
+        var week = today.getDay();
+        if(week==0){
+        week=7;
+        }
+        today.setDate(today.getDate()-week+7);
+        return today;
+    }
+    if(getCookie('urlPicture')!=""){
+        $("#anchor1").css("background-image","url("+getCookie('urlPicture')+")");
+        $("#tips").attr("title",getCookie('contentPicture'));
+    }else{
+        setCookie("contentPicture","风景图",360);
+        setCookie("urlPicture","https://starlibrary.online/image/123.jpg",360);
+        $("#anchor1").css("background-image","url("+getCookie('urlPicture')+")");
+    }
+</script>
+
+</html>

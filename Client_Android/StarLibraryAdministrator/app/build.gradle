@@ -1,0 +1,74 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion COMPILE_SDK_VERSION.toInteger()
+    buildToolsVersion "30.0.1"
+
+    defaultConfig {
+        applicationId "com.e.StarLibraryAdministrator"
+        minSdkVersion MIN_SDK_VERSION.toInteger()
+        targetSdkVersion TARGET_SDK_VERSION.toInteger()
+        versionCode VERSION_CODE.toInteger()
+        versionName VERSION_NAME
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = [AROUTER_MODULE_NAME: project.getName()]
+            }
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: "libs", include: ["*.jar"])
+    implementation 'androidx.appcompat:appcompat:1.2.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.1'
+    testImplementation 'junit:junit:4.13'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+    implementation project(path: ':mylibrary')
+
+    implementation 'com.alibaba:arouter-api:1.5.0'
+    annotationProcessor 'com.alibaba:arouter-compiler:1.2.2'
+    implementation 'org.conscrypt:conscrypt-android:2.2.1'
+    //LitePal
+    implementation 'org.litepal.guolindev:core:3.1.1'
+    //GSON
+    implementation 'com.google.code.gson:gson:2.8.6'
+    //okHttp
+    implementation("com.squareup.okhttp3:okhttp:4.7.2")
+    //二维码
+    implementation 'com.journeyapps:zxing-android-embedded:4.1.0'
+    implementation 'com.google.zxing:core:3.3.0'
+    if(IS_APPLOGIN_MODULE.toBoolean()){
+        implementation project(path: ':app_login')
+    }
+    if(IS_APPBASESHOW_MODULE.toBoolean()){
+        implementation project(path: ':app_base')
+    }
+    if(IS_USERS_MODULE.toBoolean()){
+        implementation project(path: ':app_users')
+    }
+    if(IS_MANAGERS_MODULE.toBoolean()){
+        implementation project(path: ':app_managers')
+    }
+    if(IS_BOOKMANAGEMENT_MODULE.toBoolean()){
+        implementation project(path: ':app_bookmanagement')
+    }
+    if(IS_APPORDERS_MODULE.toBoolean()){
+        implementation project(path: ':app_orders')
+    }
+}

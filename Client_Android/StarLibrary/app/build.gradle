@@ -1,0 +1,78 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion COMPILE_SDK_VERSION.toInteger()
+
+    defaultConfig {
+        applicationId "com.e.starlibrary"
+        minSdkVersion MIN_SDK_VERSION.toInteger()
+        targetSdkVersion TARGET_SDK_VERSION.toInteger()
+        versionCode VERSION_CODE.toInteger()
+        versionName VERSION_NAME
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = [AROUTER_MODULE_NAME: project.getName()]
+            }
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: "libs", include: ["*.jar"])
+    implementation 'androidx.appcompat:appcompat:1.2.0'
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+    implementation project(path: ':mylibrary')
+
+    testImplementation 'junit:junit:4.13'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.1'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+
+    implementation 'com.alibaba:arouter-api:1.5.0'
+    annotationProcessor 'com.alibaba:arouter-compiler:1.2.2'
+    implementation 'org.conscrypt:conscrypt-android:2.2.1'
+    //LitePal
+    implementation 'org.litepal.guolindev:core:3.1.1'
+    //GSON
+    implementation 'com.google.code.gson:gson:2.8.6'
+    //okHttp
+    implementation("com.squareup.okhttp3:okhttp:4.7.2")
+    //二维码
+    implementation 'com.journeyapps:zxing-android-embedded:4.1.0'
+    implementation 'com.google.zxing:core:3.3.0'
+    if(IS_APPLOGIN_MODULE.toBoolean()){
+        implementation project(path: ':app_login')
+    }
+    if(IS_APPBASESHOW_MODULE.toBoolean()){
+        implementation project(path: ':app_baseshow')
+    }
+    if(IS_BOOK_MODULE.toBoolean()){
+        implementation project(path: ':app_book')
+    }
+    if(IS_USERS_MODULE.toBoolean()){
+        implementation project(path: ':app_users')
+    }
+    if(IS_BORROW_MODULE.toBoolean()){
+        implementation project(path: ':app_borrow')
+    }
+    if(IS_MESSAGE_MODULE.toBoolean()){
+        implementation project(path: ':app_message')
+    }
+    if(IS_APPYUESHUQUAN_MODULE.toBoolean()){
+        implementation project(path: ':app_yueshuquan')
+    }
+
+}

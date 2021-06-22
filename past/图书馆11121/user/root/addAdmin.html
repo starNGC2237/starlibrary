@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../../css/anchor.css">
+    <link rel="stylesheet" type="text/css" href="../../css/user/root/addAdmin.css">
+    <title>创建管理员</title>
+</head>
+<body>
+    <!--头部导航栏-->
+    <div style="width: 100vw;height: 12vh;background-color: #181818; display: flex; align-items: center;justify-content: space-between;">
+        <span style="font-size: 5vmin;margin-left:15vw;color: white;font-family: Georgia, 'Times New Roman', Times, serif;"><a href="https://starlibrary.online" class="footer">StarLibrary</a></span>
+        <div style="margin-right: 15vw;">
+            <ul style="list-style: none;margin: 0;padding: 0;display: flex;justify-content: flex-start; align-items: center;" >
+                <div class="headPicture" style="background-image: url(../../img/white/int.png);" >
+                </div>
+                <li class="li_margin">
+                    <a href=""  class="footer" >English</a>
+                </li>
+                <div class="headPicture" style="background-image: url(../../img/white/time.png);" >
+                </div>
+                <li class="li_margin" >
+                    <a href="" id="time" class="footer"id="time" >北京时间</a>
+                </li>
+                <div class="headPicture" style="background-image: url(../../img/white/user.png);" >
+                </div>
+                <li class="li_margin">
+                    <a href="" class="footer" id="loginCookie_check" >登录</a>
+                </li>
+                <div class="headPicture" style="background-image: url(../../img/white/feedBack.png);" >
+                </div>
+                <li class="li_margin">
+                    <a href="" class="footer" >反馈</a>
+                </li>
+                <div class="headPicture" style="background-image: url(../../img/white/search.png);" >
+                </div>
+            </ul> 
+        </div>
+    </div>
+    <!--中间的部分-->
+    <div style="width: 100vw;height: 88vh;background-color: #f2f3f5;display: flex;align-items: center;">
+        <div style="width: 40vw;height: 60vh;background-color: #4185F5;margin: 0 auto;display: flex;flex-direction: column;align-items: center;">
+            <span style="font-size: 3vmin;margin-top: 4vmin;margin-bottom: 5vmin;color: orangered;">创建管理员</span>
+            <input type="text" class="adminInput" id="adminName" placeholder="管理员名称">
+            <input type="text" class="adminInput" id="adminNickName" placeholder="管理员昵称">
+            <input type="text" class="adminInput" id="adminPassword" placeholder="管理员密码">
+            <select name="" id="adminFloor" class="adminInput">
+                <option value="none">==请选择楼层==</option>
+            </select>
+            <input type="button" value="添加" class="adminInputButton" id="adminInputButton">
+        </div>
+    </div>
+    <!--底部导航栏-->
+    <div style="width: 100vw;height: 40vh;background-color:#181818;display: flex; align-items: center; justify-content: space-between;color: white; min-height: 190px;">
+        <div  style="height: 30vh; width: 35vw;margin-left: 15vw;">
+            <ul style="list-style: none;font-size: 2vmin;padding: 0;" >
+                <li style="margin-bottom: 2vh;">
+                    <span style="font-size: 5vmin;font-family: Georgia, 'Times New Roman', Times, serif;" >
+                       <a href="https://starlibrary.online" class="footer" >StarLibrary</a> 
+                    </span> 
+                </li>
+                <li class="li_footer">
+                    <span>
+                       © 2009-2019 <a href="https://starlibrary.online" class="footer" >starlibrary.com </a>版权所有
+                    </span> 
+                </li>
+                <li class="li_footer">
+                    <span>
+                        本网站仅供学习使用
+                    </span> 
+                </li>
+                <li class="li_footer">
+                    <span>
+                        ICP证：<a href="http://www.beian.miit.gov.cn" class="footer" >津ICP备20000024号</a> 
+                    </span>  
+                </li>
+                <li class="li_footer">
+                    <img src="../../img/备案图标.png" alt="" height="15px"  >
+                    <span>
+                        <a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?spm=5176.12825654.7y9jhqsfz.111.54212c4aBH6Hwq" class="footer">苏公网安备 32021402001231号</a> 
+                    </span> 
+                </li>
+            </ul>
+        </div>
+        <div  style="height: 30vh; width: 35vw;margin-right: 15vw; display: flex; justify-content: flex-end;">
+            <div style=" margin: 0 auto;margin-top: 5vh;font-size: 2vmin;">
+                <dl>
+                    <dt id="first" >
+                        本周开馆音乐：
+                    </dt>
+                    <dd>
+                        Xenogenesis
+                    </dd>
+                </dl>
+                <dl>
+                    <dt id="last"> 
+                        本周闭馆音乐：
+                    </dt>
+                    <dd>
+                        Dreamer
+                    </dd>
+                </dl>
+            </div>
+            
+        </div>
+    </div>
+</body>
+<script src="../../js/tools/jquery-3.4.1.js"></script>
+<script src="../../js/cookie.js"></script>
+<!--导航栏-->
+<script>
+    //中文的日期
+        function startTime(){
+            var today=new Date();
+            var year=today.getFullYear();
+            var month=today.getMonth()+1;
+            var day=today.getDate();
+            var hours=today.getHours();
+            var minutes=today.getMinutes();
+            var seconds=today.getSeconds();// add a zero in front of numbers<10
+            minutes=checkTime(minutes);
+            seconds=checkTime(seconds);
+            $("#time").html(year+"年"+month+"月"+day+"日"+hours+":"+minutes+":"+seconds);
+            setInterval("startTime()",1000)
+        }
+        function checkTime(i){
+            if (i<10) {
+                i="0" + i;
+            }
+            return i;
+        }
+        //加载在这里！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！
+        $(document).ready(function(){
+            setInterval("startTime()",1000);
+            weeks();
+            checkCookie("rootName");
+        });
+        //这里是检查登录情况！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！
+        function checkCookie(cname){
+            var root= getCookie(cname);
+            var nickName=getCookie("rootNickName");
+            if (root != "") {
+                document.getElementById('loginCookie_check').innerHTML=nickName;
+            }
+            else{
+                window.location.href="https://starlibrary.online/user/admin/root.html";
+            }
+        }
+        function weeks(){
+            var today=new Date();
+            var first_day=first(today);
+            var first_mouth=first_day.getMonth()+1;
+            first_mouth=checkTime(first_mouth);
+            var first_date=first_day.getDate();
+            first_date=checkTime(first_date);
+            var last_day=last(today);
+            var last_mouth=last_day.getMonth()+1;
+            last_mouth=checkTime(last_mouth);
+            var last_date=last_day.getDate();
+            last_date=checkTime(last_date);
+            document.getElementById('first').innerHTML="本周("+first_mouth+"."+first_date+"~"+last_mouth+"."+last_date+")开馆音乐：";
+            document.getElementById('last').innerHTML="本周("+first_mouth+"."+first_date+"~"+last_mouth+"."+last_date+")闭馆音乐：";
+        }
+        function first(today){
+            var week = today.getDay();
+            if(week==0){
+                week=7;
+            }
+            today.setDate(today.getDate()-week+1);
+            return today;
+        }
+        function last(today){
+            var week = today.getDay();
+            if(week==0){
+            week=7;
+            }
+            today.setDate(today.getDate()-week+7);
+            return today;
+        }
+</script>
+<script>
+        $.ajax({ 
+            type: "get",//方法类型
+            dataType: "json",//预期服务器返回的数据类型
+            url: "https://starlibrary.online/penghao/manager/floor" ,//url      
+            success: function (result) {                    
+                console.log(result);//打印服务端返回的数据(调试用)
+                console.log(result.data.list.length);
+                if (result.status==200) {
+                    for(var i=0;i<result.data.list.length;i++){
+                        
+                        $("#adminFloor").append("<option value='"+result.data.list[i].floor+"'>"+result.data.list[i].floor+"</option>");
+                    }
+                }else if(result.status==404){
+                    alert(result.msg);
+                }else{
+                    alert("系统错误！错误码："+result);
+                }
+            },
+            error : function(XMLHttpRequest, textStatus, errorThrown){
+                console.log(XMLHttpRequest.status);
+                console.log(XMLHttpRequest.readyState);
+                console.log(textStatus);
+            }
+        });
+    $("#adminInputButton").click(function(){
+        if($("#adminName").val()!=""&&$("#adminNickName").val()!=""&&$("#adminPassword").val()!=""&&$("#adminFloor").val()!="none"){
+            $.ajax({
+            type:"get",
+            url:"https://starlibrary.online/penghao/vipmanager/addmanager",
+            dataType:"json",
+            data:{
+                userName:$("#adminName").val(),
+                nickName:$("#adminNickName").val(),
+                userPassword:$("#adminPassword").val(),
+                floor:$("#adminFloor").val()
+            },
+            success:function(response){
+                console.log(response);
+                if(response.status==200){
+                    alert(response.msg);
+                    window.location.href="https://starlibrary.online/user/root/adminManger.html" 
+                }else if(response.status==404){
+                    alert(response.msg);
+                }else{
+                    alert("系统错误，错误码："+response);
+                }
+                
+            },
+            error : function(){
+                alert("异常！");
+            }
+            })
+        }else{
+            alert("输入不能为空，请重新输入！")
+        }
+        
+    });
+</script>
+<script>
+    function save(){
+        $.ajax({
+            
+        })
+    }
+</script>
+<!--超时js-->
+<script>
+    var lastTime = new Date().getTime();
+        var currentTime = new Date().getTime();
+        var timeOut = 20* 60 * 1000; //设置超时时间： 20分
+
+        $(function(){
+            /* 鼠标移动事件 */
+            $(document).mouseover(function(){
+                lastTime = new Date().getTime(); //更新操作时间
+
+            });
+        });
+
+        function testTime(){
+            currentTime = new Date().getTime(); //更新当前时间
+            if(currentTime - lastTime > timeOut){ //判断是否超时
+                window.location.href="https://starlibrary.online/timeout.html"
+            }
+        }
+
+        /* 定时器  间隔1秒检测是否长时间未操作页面  */
+        window.setInterval(testTime, 1000);
+</script>
+</html>

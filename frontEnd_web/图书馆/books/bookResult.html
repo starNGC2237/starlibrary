@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../css/anchor.css">
+    <link rel="stylesheet" type="text/css" href="../css/books/result.css">
+    <title>书籍管理</title>
+</head>
+<body>
+    <div style="width: 28vw;height: 60vh;position: absolute;background-color: #1296db;bottom: 25vh;left: 40vw;display: none;flex-direction: column;align-items: center;justify-content: space-around;" class="user_borrow">
+        <div style="width: 26vw;height: 10vh;display: flex;flex-direction:row-reverse;align-items: center;">
+            <div style="width: 3vmin;height: 3vmin;background-image: url(../../img/close.png);background-position: center;cursor: pointer; background-repeat: no-repeat;background-size: cover; z-index: 100;" onclick="close_inf()" title="关闭"></div>
+            <div style="margin: 0 auto;font-size: 2vmin;" id="user_name">修改书籍数量</div>
+        </div>
+        <div style="width: 20vw;height: 45vh;display: flex;flex-direction: column;">
+            <ul style="list-style:circle" id="list">
+                <dl>
+                    <dt>增加？</dt>
+                    <dd>
+                        <input type="text" value="0" id="add">
+                    </dd>
+                </dl>
+                <dt>
+                    <dt>减少？</dt>
+                    <dd>
+                        <input type="text" value="0" id="reduce">
+                    </dd>
+                </dt>
+            </ul>
+            <button style="margin: 4vh 9vw 0 8vw;" onclick="click_num()">确定</button>
+        </div>
+    </div>
+    <!--头部导航栏-->
+    <div style="width: 100vw;height: 12vh;background-color: #4185F5; display: flex; align-items: center;justify-content: space-between;">
+        <span style="font-size: 5vmin;margin-left:15vw;color: white;font-family: Georgia, 'Times New Roman', Times, serif;"><a href="https://starlibrary.online" class="footer">StarLibrary</a></span>
+        <div style="margin-right: 15vw;">
+            <ul style="list-style: none;margin: 0;padding: 0;display: flex;justify-content: flex-start; align-items: center;" >
+                <div class="headPicture" style="background-image: url(../img/white/int.png);" >
+                </div>
+                <li class="li_margin">
+                    <a href=""  class="footer" >English</a>
+                </li>
+                <div class="headPicture" style="background-image: url(../img/white/time.png);" >
+                </div>
+                <li class="li_margin" >
+                    <a href="" id="time" class="footer"id="time" >北京时间</a>
+                </li>
+                <div class="headPicture" style="background-image: url(../img/white/user.png);" >
+                </div>
+                <li class="li_margin">
+                    <a href="" class="footer" id="loginCookie_check" >登录</a>
+                </li>
+                <div class="headPicture" style="background-image: url(../img/white/feedBack.png);" >
+                </div>
+                <li class="li_margin">
+                    <a href="../feedBack.html" class="footer" >反馈</a>
+                </li>
+                <div class="headPicture" style="background-image: url(../img/white/search.png);" >
+                </div>
+            </ul> 
+        </div>
+    </div>
+    <!--中间的部分-->
+    <div style="width: 100vw;height: 88vh;background-color: #f2f3f5;display: flex;align-items: center;">
+        <div style="width: 65vw;height: 80vh;background-color: #181818;margin: 0 auto;display: flex;justify-content: space-around;align-items: center;">
+            <div style="width: 20vw;height: 70vh;display: flex;flex-direction: column;justify-content: center;">
+                <div style="width: 20vmax;height: 26vmax;background-color: #f2f3f5;background-image: url();background-position: center;background-size: cover;background-repeat: no-repeat;" id="show">
+                </div>
+            </div>
+            <div style="width: 40vw;height: 70vh;background-color: #f2f3f5;display: flex;flex-direction: column;align-items: center;" id="input_b">
+                <span id="bookName" class="input_te" style="margin-top: 5vh;">书名：</span>
+                <span id="bookAuthor" class="input_te">著者：</span>
+                <span id="bookPublish" class="input_te">出版社：</span>
+                <span id="publishTime" class="input_te">出版时间：</span>
+                <div class="input_te" style="display: flex;">
+                    <span id="bookNumber" style="margin-right: 4vw;">数量：</span>
+                    <button  onclick="number_change()" style="min-height: 4vmin;">更改数量</button>
+                </div>
+                <span id="bookPage" class="input_te">页数：</span>
+                
+                <div class="input_te" style="display: flex;">
+                    <select name="" id="bookPlace" style="width: 15vw;">
+                        <option value="none">==请选择楼层==</option>
+                    </select>
+                </div>
+                <span id="type" class="input_te">类型：</span>
+                <span id="bookIntroduction" class="input_te">简介：</span>
+                <div style="width:25vw;height: 5vh;display: flex;justify-content: center;margin-top: 5vh;">
+                    <input type="button" value="删除" id="button_delete" onclick="deleteBook()" style="width: 4vw;height: 3vh;margin-right: 5vw;" >
+                    <input type="button" value="保存" id="button_save" style="width: 4vw;height: 3vh;" onclick="save()">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--底部导航栏-->
+    <div style="width: 100vw;height: 40vh;background-color:#181818;display: flex; align-items: center; justify-content: space-between;color: white; min-height: 190px;">
+        <div  style="height: 30vh; width: 35vw;margin-left: 15vw;">
+            <ul style="list-style: none;font-size: 2vmin;padding: 0;" >
+                <li style="margin-bottom: 2vh;">
+                    <span style="font-size: 5vmin;font-family: Georgia, 'Times New Roman', Times, serif;" >
+                       <a href="https://starlibrary.online" class="footer" >StarLibrary</a> 
+                    </span> 
+                </li>
+                <li class="li_footer">
+                    <span>
+                       © 2020-2021 <a href="https://starlibrary.online" class="footer" >starlibrary.com </a>版权所有
+                    </span> 
+                </li>
+                <li class="li_footer">
+                    <span>
+                        本网站仅供学习使用
+                    </span> 
+                </li>
+                <li class="li_footer">
+                    <span>
+                        ICP证：<a href="http://www.beian.miit.gov.cn" class="footer" >津ICP备20000024号</a> 
+                    </span>  
+                </li>
+                <li class="li_footer">
+                    <img src="../img/备案图标.png" alt="" height="15px"  >
+                    <span>
+                        <a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?spm=5176.12825654.7y9jhqsfz.111.54212c4aBH6Hwq" class="footer">苏公网安备 32021402001231号</a> 
+                    </span> 
+                </li>
+            </ul>
+        </div>
+        <div  style="height: 30vh; width: 35vw;margin-right: 15vw; display: flex; justify-content: flex-end;">
+            <div style=" margin: 0 auto;margin-top: 5vh;font-size: 2vmin;">
+                <dl>
+                    <dt id="first" >
+                        本周开馆音乐：
+                    </dt>
+                    <dd>
+                        Xenogenesis
+                    </dd>
+                </dl>
+                <dl>
+                    <dt id="last"> 
+                        本周闭馆音乐：
+                    </dt>
+                    <dd>
+                        Dreamer
+                    </dd>
+                </dl>
+            </div>
+            
+        </div>
+    </div>
+</body>
+<script src="../js/tools/jquery-3.4.1.js"></script>
+<script src="../js/cookie.js"></script>
+<!--顶部导航栏和底部导航栏的js-->
+<script>
+    //中文的日期
+    function startTime(){
+        var today=new Date();
+        var year=today.getFullYear();
+        var month=today.getMonth()+1;
+        var day=today.getDate();
+        var hours=today.getHours();
+        var minutes=today.getMinutes();
+        var seconds=today.getSeconds();// add a zero in front of numbers<10
+        minutes=checkTime(minutes);
+        seconds=checkTime(seconds);
+        $("#time").html(year+"年"+month+"月"+day+"日"+hours+":"+minutes+":"+seconds);
+        setInterval("startTime()",1000)
+    }
+    function checkTime(i){
+        if (i<10) {
+            i="0" + i;
+        }
+        return i;
+    }
+    
+    //加载在这里！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！
+    $(document).ready(function(){
+        setInterval("startTime()",1000);
+        weeks();
+        checkCookie("userName");
+    });
+    //这里是检查登录情况！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！
+    function checkCookie(cname){
+        var user = getCookie(cname);
+        var nickName=getCookie("nickName");
+        if (user != "") {
+            document.getElementById('loginCookie_check').innerHTML=nickName;
+            document.getElementById('loginCookie_check').href="https://starlibrary.online/user/message.html";
+        }else{
+            document.getElementById('loginCookie_check').href="https://starlibrary.online/user/login.html";
+        }
+    }
+    function weeks(){
+        var today=new Date();
+        var first_day=first(today);
+        var first_mouth=first_day.getMonth()+1;
+        first_mouth=checkTime(first_mouth);
+        var first_date=first_day.getDate();
+        first_date=checkTime(first_date);
+        var last_day=last(today);
+        var last_mouth=last_day.getMonth()+1;
+        last_mouth=checkTime(last_mouth);
+        var last_date=last_day.getDate();
+        last_date=checkTime(last_date);
+        document.getElementById('first').innerHTML="本周("+first_mouth+"."+first_date+"~"+last_mouth+"."+last_date+")开馆音乐：";
+        document.getElementById('last').innerHTML="本周("+first_mouth+"."+first_date+"~"+last_mouth+"."+last_date+")闭馆音乐：";
+    }
+    function first(today){
+        var week = today.getDay();
+        if(week==0){
+            week=7;
+        }
+        today.setDate(today.getDate()-week+1);
+        return today;
+    }
+    function last(today){
+        var week = today.getDay();
+        if(week==0){
+        week=7;
+        }
+        today.setDate(today.getDate()-week+7);
+        return today;
+    }
+</script>
+<!--超时js-->
+<script>
+    var lastTime = new Date().getTime();
+        var currentTime = new Date().getTime();
+        var timeOut = 20* 60 * 1000; //设置超时时间： 20分
+
+        $(function(){
+            /* 鼠标移动事件 */
+            $(document).mouseover(function(){
+                lastTime = new Date().getTime(); //更新操作时间
+
+            });
+        });
+
+        function testTime(){
+            currentTime = new Date().getTime(); //更新当前时间
+            if(currentTime - lastTime > timeOut){ //判断是否超时
+                window.location.href="https://starlibrary.online/timeout.html"
+            }
+        }
+
+        /* 定时器  间隔1秒检测是否长时间未操作页面  */
+        window.setInterval(testTime, 60000);
+</script>
+<script>
+    function click_num(){
+        if($("#add").val()==0&&$("#reduce").val()!=0){
+            // 添加书籍数量
+            $.ajax({
+                type:"get",
+                dataType:"json",
+                url:"https://starlibrary.online/penghao/book/revise",
+                data:{
+                    type:0,
+                    bookId:getCookie("KKey"),
+                    bookNumber:$("#reduce").val()
+                },
+                success:function(result){
+                    if (result.status==200) {
+                        console.log(result);
+                        alert(result.msg);
+                        $(".user_borrow").css("display","none");
+                        window.location.href="https://starlibrary.online/books/bookResult.html" 
+                    }else if(result.status==404){
+                        alert(result.msg);
+                    }else{
+                        alert("系统错误！错误码："+result);
+                    }
+                },
+                error : function(XMLHttpRequest, textStatus, errorThrown){
+                    console.log(XMLHttpRequest.status);
+                    console.log(XMLHttpRequest.readyState);
+                    console.log(textStatus);
+                }
+            })  
+        }else if($("#add").val()!=0&&$("#reduce").val()==0){
+            // 减少书籍数量
+            $.ajax({
+                type:"get",
+                dataType:"json",
+                url:"https://starlibrary.online/penghao/book/revise",
+                data:{
+                    type:1,
+                    bookId:getCookie("KKey"),
+                    bookNumber:$("#add").val()
+                },
+                success:function(result){
+                    if (result.status==200){
+                        alert(result.msg);
+                        $(".user_borrow").css("display","none");
+                        window.location.href="https://starlibrary.online/books/bookResult.html"
+                    }else if(result.status==404){
+                        alert(result.msg);
+                    }else{
+                        alert("系统错误！错误码："+result);
+                    }
+                },
+                error : function(XMLHttpRequest, textStatus, errorThrown){
+                    console.log(XMLHttpRequest.status);
+                    console.log(XMLHttpRequest.readyState);
+                    console.log(textStatus);
+                }
+            })  
+        }else{
+            alert("请检查您的输入，增加与减少之中应有一个为0！")
+        }
+        
+    }
+    //改数量,开弹窗
+    function number_change(){
+        $(".user_borrow").css("display","flex");
+    }
+    //关闭弹窗
+    function close_inf(){
+        $(".user_borrow").css("display","none"); 
+    }
+    
+    //设置所有floor
+    $.ajax({
+        type:"get",
+        dataType:"json",
+        url:"https://starlibrary.online/penghao/manager/floor2",
+        success:function(result){
+            if (result.status==200) {
+                for(var i=0;i<result.data.length;i++){
+                    $("#bookPlace").append("<option value='"+result.data[i].floor+"'>"+result.data[i].floor+"</option>");
+                }
+                aft();
+            }else if(result.status==404){
+                alert(result.msg);
+            }else{
+                alert("系统错误！错误码："+result);
+            }
+        },
+        error : function(XMLHttpRequest, textStatus, errorThrown){
+            console.log(XMLHttpRequest.status);
+            console.log(XMLHttpRequest.readyState);
+            console.log(textStatus);
+        }
+    })
+    function aft(){
+        // 单个书籍信息
+        $.ajax({
+            type:"get",
+            dataType:"json",
+            url:"https://starlibrary.online/penghao/book/query",
+            data:{
+                bookId:getCookie("KKey")
+            },
+            success:function(response){
+                console.log(response);
+                $("#bookName").append(""+response.data.bookName);
+                $("#bookAuthor").append(""+response.data.bookAuthor);
+                $("#bookPublish").append(""+response.data.bookPublish);
+                $("#publishTime").append(""+response.data.publishTime);
+                $("#bookNumber").append(""+response.data.bookNumber);
+                $("#bookPage").append(""+response.data.bookPage);
+                $("#bookIntroduction").append(""+response.data.bookIntroduction);
+                $("#bookPlace").val(response.data.bookPlace);
+                $("#type").append(""+response.data.bookType);
+                $("#show").css("background-image","url("+response.data.src+")");
+            },
+            error : function(XMLHttpRequest, textStatus, errorThrown){
+                console.log(XMLHttpRequest.status);
+                console.log(XMLHttpRequest.readyState);
+                console.log(textStatus);
+            }
+        })
+    }
+    
+    
+</script>
+<!--删除和保存修改-->
+<script>
+    function deleteBook(){
+        //删除书籍
+        $.ajax({
+            type:"get",
+            dataType: "json",//预期服务器返回的数据类型
+            url: "https://starlibrary.online/penghao/book/deletebook" ,//url
+            data:{
+                bookId:getCookie("KKey")
+            },
+            success: function (result) {                    
+                console.log(result);//打印服务端返回的数据(调试用)
+                if (result.status==200) {
+                    alert(result.msg)
+                }else if(result.status==404){
+                    alert(result.msg);
+                }else{
+                    alert("系统错误！错误码："+result);
+                }
+            },
+            error : function(XMLHttpRequest, textStatus, errorThrown){
+                console.log(XMLHttpRequest.status);
+                console.log(XMLHttpRequest.readyState);
+                console.log(textStatus);
+            }
+        });
+    }
+    function save(){
+        // 保存书籍
+        $.ajax({
+            type:"get",
+            dataType: "json",//预期服务器返回的数据类型
+            url: "https://starlibrary.online/penghao/book/revise" ,//url
+            data:{
+                bookId:getCookie("KKey"),
+                bookPlace:$("#bookPlace").val()
+            },
+            success: function (result) {                    
+                console.log(result);//打印服务端返回的数据(调试用)
+                if (result.status==200) {
+                    console.log(result);
+                    alert(result.msg);
+                    window.close();
+                }else if(result.status==404){
+                    alert(result.msg);
+                }else{
+                    alert("系统错误！错误码："+result);
+                }
+            },
+            error : function(XMLHttpRequest, textStatus, errorThrown){
+                console.log(XMLHttpRequest.status);
+                console.log(XMLHttpRequest.readyState);
+                console.log(textStatus);
+            }
+        });
+    }
+    
+</script>
+</html>

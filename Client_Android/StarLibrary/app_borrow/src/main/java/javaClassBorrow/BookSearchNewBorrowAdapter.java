@@ -1,0 +1,101 @@
+package javaClassBorrow;
+
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+
+import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.RecyclerView;
+
+import com.alibaba.android.arouter.launcher.ARouter;
+import com.bumptech.glide.Glide;
+import com.e.mylibrary.Book;
+import com.e.mylibrary.R;
+
+import java.util.List;
+
+public class BookSearchNewBorrowAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
+
+    View v;
+    private List<Book> mDatas;
+    int card;
+    @NonNull
+    @Override
+    public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+
+        if(mDatas.size()>0){
+            v= LayoutInflater.from(parent.getContext()).inflate(R.layout.my_book_item, parent, false);
+            return new MyHolder(v);
+        }else {
+            v= LayoutInflater.from(parent.getContext()).inflate(R.layout.my_book_null_item, parent, false);
+            return new VHNULL(v);
+        }
+
+    }
+
+    public BookSearchNewBorrowAdapter(List<Book> mDatas, int card) {
+        this.mDatas = mDatas;
+        this.card = card;
+    }
+
+    @Override
+    public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
+        if (holder instanceof MyHolder){
+            final Book book = mDatas.get(position);
+            Glide.with(v).load(book.getSrc()).into(((MyHolder) holder).ivImage);
+            String stringBookNumber=book.getBorrowNumber()+"人已借阅";
+            ((MyHolder) holder).tvBorrowNumber.setText(stringBookNumber);
+            ((MyHolder) holder).tvBookName.setText(book.getBookName());
+            ((MyHolder) holder).tvBookAuthor.setText(book.getBookAuthor());
+            ((MyHolder) holder).itemLayout.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    ARouter.getInstance().build("/app_book/BookActivity").withInt("bookId",book.getBookId()).navigation();
+                }
+            });
+        }else if(holder instanceof VHNULL){
+            if (card!=0){
+                ((VHNULL) holder).tvTips.setText("没有找到书籍哦");
+            }else {
+                ((VHNULL) holder).tvTips.setText("没有绑定图书证哦");
+            }
+        }
+
+    }
+
+    @Override
+    public int getItemCount() {
+        if (mDatas.size()>0){
+            return mDatas.size();
+        }else {
+            return 1;
+        }
+
+    }
+
+    static class MyHolder extends RecyclerView.ViewHolder {
+        LinearLayout itemLayout;
+        ImageView ivImage;
+        TextView tvBookName;
+        TextView tvBookAuthor;
+        TextView tvBorrowNumber;
+        public MyHolder(View itemView) {
+            super (itemView);
+            itemLayout = itemView.findViewById (R.id.book_search_item);
+            ivImage = itemView.findViewById (R.id.bookImage_search);
+            tvBookName = itemView.findViewById (R.id.bookName_search);
+            tvBookAuthor=itemView.findViewById(R.id.bookAuthor_search);
+            tvBorrowNumber=itemView.findViewById(R.id.borrowNumber_search);
+        }
+    }
+    static class VHNULL extends RecyclerView.ViewHolder{
+        TextView tvTips;
+        public VHNULL(View v) {
+            super(v);
+            tvTips=v.findViewById(R.id.book_tips);
+        }
+    }
+}

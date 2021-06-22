@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">app_users</string>
+    <string name="userInfo_users">个人信息</string>
+    <string name="headPic_users">头像</string>
+    <string name="nickName_users">昵称</string>
+    <string name="password_users">密码</string>
+    <string name="userName_users">用户名</string>
+    <string name="phone_users">手机号</string>
+    <string name="floor_users">楼层</string>
+    <string name="changePass">修改密码</string>
+    <string name="users_save">保存</string>
+    <string name="pass_past">原密码</string>
+    <string name="pass_now">现密码</string>
+    <string name="exit_APP_users">退出StarLibrary</string>
+    <string name="accountManger_users">账号管理</string>
+    <string name="delete_users">删除</string>
+</resources>

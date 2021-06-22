@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../css/anchor.css">
+    <link rel="stylesheet" type="text/css" href="../css/user/register.css">
+    <style>
+        [v-cloak]{
+            display:none;
+        }
+    </style>
+    <title>忘记密码</title>
+</head>
+<body>
+    <div style="width: 100vw;height: 100vh;background-image: url();background-repeat: no-repeat;background-size: cover;background-position: center;min-height: 300px;"id="anchor1">
+        <!--头部导航栏-->
+        <div style="width: 100vw;height: 12vh;display: flex; align-items: center;justify-content: space-between;">
+        <span style="font-size: 5vmin;margin-left:15vw;color: white;font-family: Georgia, 'Times New Roman', Times, serif;"><a href="https://starlibrary.online" class="footer">StarLibrary</a></span>
+            <div style="margin-right: 15vw;">
+                <ul style="list-style: none;margin: 0;padding: 0;display: flex;justify-content: flex-start; align-items: center;" >
+                    <div class="headPicture" style="background-image: url(../img/white/int.png);">
+                    </div>
+                    <li class="li_margin">
+                        <a href="../English/index.html" class="footer">English</a>
+                    </li>
+                    <div class="headPicture" style="background-image: url(../img/white/time.png);">
+                    </div>
+                    <li class="li_margin">
+                        <a href="https://starlibrary.online/clock.html" id="time" class="footer"id="time" >北京时间</a>
+                    </li>
+                    <div class="headPicture" style="background-image: url(../img/white/user.png);">
+                    </div>
+                    <li class="li_margin">
+                        <a  href="" class="footer" id="loginCookie_check" >登录</a>
+                    </li>
+                    <div class="headPicture" style="background-image: url(../img/white/feedBack.png);" >
+                    </div>
+                    <li class="li_margin">
+                        <a href="../feedBack.html" class="footer" >反馈</a>
+                    </li>
+                    <div class="headPicture" style="background-image: url(../img/white/search.png);">
+                    </div>
+                </ul>
+            </div>
+        </div>
+        <div style="width: 80vw;height: 85vh;margin: 0 auto;display: flex;flex-direction: column;justify-content: space-between;margin-top: 3vh;">
+            <div style="text-align: center;">
+                <h1 style="margin-top: 0; margin-bottom: 6vmin; color: orangered;font-size: 4vmin;">忘记密码</h1>
+            </div>
+            <div style="width: 80vw;height: 80vh;display: flex;flex-direction: column;align-items: center;">
+                <input type="text" name="userName" autocomplete="off" placeholder="用户名" class="input_text_register"id="userName" v-model="userName" v-on:keyup="keyTips" v-focus>
+                <p id="userNameTips" class="input_text_p" v-cloak>{{userNameTips}}&nbsp;</p>
+                <input type="password" name="userPassword" autocomplete="off" placeholder="新密码（6-16个字符组成，区分小写）" class="input_text_register"  id="userPassword" v-model="userPassword" v-on:keyup="keyTips">
+                <p class="input_text_p" v-cloak id="userPasswordTips">{{userPasswordTips}}&nbsp;</p>
+                <input type="number" class="input_text_register" autocomplete="off" placeholder="电话号码" name="userPhone" v-model="userPhone" v-on:keyup="keyTips">
+                <p class="input_text_p" v-cloak id="userPhoneTips">{{userPhoneTips}}&nbsp;</p>
+                <p class="input_text_p">&nbsp;</p>
+                <button class="input_text_registerButton" style="cursor: pointer;" @click='handle'>修改</button>
+                <p style="text-align: right;width: 25vw;"><a href="login.html" class="darkblue" >想起密码了？登录>></a><p>
+            </div>
+           
+        </div>
+    </div>
+    <!--底部导航栏-->
+    <div style="width: 100vw;height: 40vh;background-color:#181818;display: flex; align-items: center; justify-content: space-between;color: white; min-height: 190px;">
+        <div  style="height: 30vh; width: 35vw;margin-left: 15vw;">
+            <ul style="list-style: none;font-size: 2vmin;padding: 0;">
+                <li style="margin-bottom: 2vh;">
+                    <span style="font-size: 5vmin;font-family: Georgia, 'Times New Roman', Times, serif;" >
+                       <a href="https://starlibrary.online" class="footer" >StarLibrary</a> 
+                    </span> 
+                </li>
+                <li class="li_footer">
+                    <span>
+                       © 2020-2021 <a href="https://starlibrary.online" class="footer" >starlibrary.com </a>版权所有
+                    </span> 
+                </li>
+                <li class="li_footer">
+                    <span>
+                        本网站仅供学习使用
+                    </span> 
+                </li>
+                <li class="li_footer">
+                    <span>
+                        ICP证：<a href="http://www.beian.miit.gov.cn" class="footer" >津ICP备20000024号</a> 
+                    </span>  
+                </li>
+                <li class="li_footer">
+                    <img src="../img/备案图标.png" alt="" height="15px"  >
+                    <span>
+                        <a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?spm=5176.12825654.7y9jhqsfz.111.54212c4aBH6Hwq" class="footer">苏公网安备 32021402001231号</a> 
+                    </span> 
+                </li>
+            </ul>
+        </div>
+        <div  style="height: 30vh; width: 35vw;margin-right: 15vw; display: flex; justify-content: flex-end;">
+            <div style=" margin: 0 auto;margin-top: 5vh;font-size: 2vmin;">
+                <dl>
+                    <dt id="first" >
+                        本周开馆音乐：
+                    </dt>
+                    <dd>
+                        Xenogenesis
+                    </dd>
+                </dl>
+                <dl>
+                    <dt id="last"> 
+                        本周闭馆音乐：
+                    </dt>
+                    <dd>
+                        Dreamer
+                    </dd>
+                </dl>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="../js/tools/jquery-3.4.1.js"></script>
+<script src="../js/cookie.js"></script>
+<script src="../js/tools/vue.js"></script>
+<!--顶部导航栏和底部导航栏的js-->
+<script>
+    //中文的日期
+    function startTime(){
+        var today=new Date();
+        var year=today.getFullYear();
+        var month=today.getMonth()+1;
+        var day=today.getDate();
+        var hours=today.getHours();
+        var minutes=today.getMinutes();
+        var seconds=today.getSeconds();// add a zero in front of numbers<10
+        minutes=checkTime(minutes);
+        seconds=checkTime(seconds);
+        $("#time").html(year+"年"+month+"月"+day+"日"+hours+":"+minutes+":"+seconds);
+        setInterval("startTime()",1000)
+    }
+    function checkTime(i){
+        if (i<10) {
+            i="0" + i;
+        }
+        return i;
+    }
+
+    //加载在这里！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！
+    $(document).ready(function(){
+        setInterval("startTime()",1000);
+        weeks();
+        checkCookie("userName");
+    });
+    //这里是检查登录情况！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！
+    function checkCookie(cname){
+        var user = getCookie(cname);
+        var nickName=getCookie("nickName");
+        if (user != "") {
+            document.getElementById('loginCookie_check').innerHTML=nickName;
+            document.getElementById('loginCookie_check').href="https://starlibrary.online/user/message.html";
+        }else{
+            document.getElementById('loginCookie_check').href="https://starlibrary.online/user/login.html";
+        }
+    }
+    function weeks(){
+        var today=new Date();
+        var first_day=first(today);
+        var first_mouth=first_day.getMonth()+1;
+        first_mouth=checkTime(first_mouth);
+        var first_date=first_day.getDate();
+        first_date=checkTime(first_date);
+        var last_day=last(today);
+        var last_mouth=last_day.getMonth()+1;
+        last_mouth=checkTime(last_mouth);
+        var last_date=last_day.getDate();
+        last_date=checkTime(last_date);
+        document.getElementById('first').innerHTML="本周("+first_mouth+"."+first_date+"~"    +last_mouth+"."+last_date+")开馆音乐：";
+        document.getElementById('last').innerHTML="本周("+first_mouth+"."+first_date+"~" +last_mouth+"."+last_date+")闭馆音乐：";
+    }
+    function first(today){
+        var week = today.getDay();
+        if(week==0){
+            week=7;
+        }
+        today.setDate(today.getDate()-week+1);
+        return today;
+    }
+    function last(today){
+        var week = today.getDay();
+        if(week==0){
+        week=7;
+        }
+        today.setDate(today.getDate()-week+7);
+        return today;
+    }
+    if(getCookie('urlPicture')!=""){
+        $("#anchor1").css("background-image","url("+getCookie('urlPicture')+")");
+        $("#tips").attr("title",getCookie('contentPicture'));
+    }else{
+        setCookie("contentPicture","风景图",360);
+        setCookie("urlPicture","https://starlibrary.online/image/123.jpg",360);
+        $("#anchor1").css("background-image","url("+getCookie('urlPicture')+")");
+    }
+</script>
+<script>
+    var vm=new Vue({
+        el:'#anchor1',
+        data:{
+            userName:'',
+            userPassword:'',
+            userPhone:'',
+            userNameTips:'',
+            userPasswordTips:'',
+            userPhoneTips:''
+        },
+        methods: {
+            handle:function(){
+                //忘记密码
+                $.ajax({
+                    type: "get",//方法类型
+                    dataType: "json",//预期服务器返回的数据类型
+                    url: "https://starlibrary.online/penghao/user/forgetpassword" ,//url
+                    data: {
+                        userName:vm.userName,
+                        userPassword:vm.userPassword,
+                        userPhone:vm.userPhone
+                    },               
+                    success: function (result) {                    
+                        console.log(result.msg);//打印服务端返回的数据(调试用)
+                        if (result.status==200) {
+                            alert(result.msg+",即将跳转至登录。")
+                            window.location.href="https://starlibrary.online/user/login.html";
+                        }else if(result.status==404){
+                            alert("用户名与手机号不匹配！");
+                            $("#userNameTips").css("color","red");
+                            vm.userNameTips="用户名与手机号不匹配！";
+                            $("#userPhoneTips").css("color","red");
+                            vm.userPhoneTips="用户名与手机号不匹配！";
+                        }
+                    },                
+                    error : function(){
+                        alert("异常！");
+                    }
+                });
+            },
+            keyTips:function(){
+                if(this.userName!=""){
+                    $("#userNameTips").css("color","blue");
+                    this.userNameTips="您输入的用户名为："+this.userName;
+                }else{
+                    $("#userNameTips").css("color","red");
+                    this.userNameTips="请输入用户名！"
+                }
+                if(this.userPassword.length>=6&&this.userPassword.length<=16){
+                    $("#userPasswordTips").css("color","blue");
+                    this.userPasswordTips="密码达到要求。";
+                }else{
+                    $("#userPasswordTips").css("color","red");
+                    this.userPasswordTips="密码达到没有要求，需要6-16个字符组成";
+                }
+                if(this.userPhone!=""){
+                    $("#userPhoneTips").css("color","blue");
+                    this.userPhoneTips="您输入的电话号码为："+this.userPhone;
+                }else{
+                    $("#userPhoneTips").css("color","red");
+                    this.userPhoneTips="请输入电话号码！"  
+                }
+            }
+        },
+        directives:{
+            focus: {
+                inserted: function(el){
+                el.focus();
+            }
+        }
+        }
+    })
+</script>
+</html>

@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge,chrome=1">
+    <link rel="stylesheet" type="text/css" href="../../css/anchor.css">
+    <link rel="stylesheet" type="text/css" href="../../css/user/admin/students.css">
+    <title>管理员后台界面</title>
+</head>
+<body>
+    <!--头部导航栏-->
+    <div style="width: 100vw;height: 12vh;background-color: #181818; display: flex; align-items: center;justify-content: space-between;">
+        <span style="font-size: 5vmin;margin-left:15vw;color: white;font-family: Georgia, 'Times New Roman', Times, serif;"><a href="https://starlibrary.online" class="footer">StarLibrary</a></span>
+        <div style="margin-right: 15vw;">
+            <ul style="list-style: none;margin: 0;padding: 0;display: flex;justify-content: flex-start; align-items: center;" >
+                <div class="headPicture" style="background-image: url(../../img/white/int.png);" >
+                </div>
+                <li class="li_margin">
+                    <a href=""  class="footer" >English</a>
+                </li>
+                <div class="headPicture" style="background-image: url(../../img/white/time.png);" >
+                </div>
+                <li class="li_margin" >
+                    <a href="" id="time" class="footer"id="time" >北京时间</a>
+                </li>
+                <div class="headPicture" style="background-image: url(../../img/white/user.png);" >
+                </div>
+                <li class="li_margin">
+                    <a href="" class="footer" id="loginCookie_check" >登录</a>
+                </li>
+                <div class="headPicture" style="background-image: url(../../img/white/feedBack.png);" >
+                </div>
+                <li class="li_margin">
+                    <a href="" class="footer" >反馈</a>
+                </li>
+                <div class="headPicture" style="background-image: url(../../img/white/search.png);" >
+                </div>
+            </ul> 
+        </div>
+    </div>
+    <!--中间的部分-->
+    <div style="width: 100vw;height: 100vh;background-color: #f2f3f5;display: flex;align-items: center;">
+        <div style="width: 90vw;height: 90vh;background-color: #f2f3f5;margin: 0 auto; display: flex;flex-direction: column;">
+            <!--功能列表-->
+            <div style="width: 80vw ;height: 12vh; background-color: #181818;margin: 0 auto;display: flex;align-items: center;justify-content: space-around;min-height: 50px;">
+                
+                <!--管理读者-->
+                <div class="functions" style="margin-left: 5vw;" >
+                    <div style="background-image: url(../../img/white/admins/readerManagement.png);" class="functions_picture" >
+                    </div>
+                    <div style="text-align: center;margin-top: 1vmin;cursor: pointer;color: white;" id="students">
+                        读者管理
+                    </div>
+                </div>
+                <!--典藏管理-->
+                <div class="functions">
+                    <div style="background-image: url(../../img/white/admins/collectionManagement.png);" class="functions_picture" >
+                    </div>
+                    <div style="text-align: center;font-size: 1vmax;margin-top: 1vmin;cursor: pointer;color: white;" id="books">
+                        典藏管理
+                    </div>
+                </div>
+                <!---->
+                <div class="functions">
+                    <div style="background-image: url(../../img/blue/admins/borrowingManagement.png);" class="functions_picture" >
+                    </div>
+                    <div style="text-align: center;font-size: 1vmax;margin-top: 1vmin;color: #1296db;cursor: pointer;" id="borrow">
+                        借阅管理
+                    </div>
+                </div>
+                <div class="functions">
+                    <div style="background-image: url(../../img/white/admins/appointmentManagement.png);" class="functions_picture" >
+                    </div>
+                    <div style="text-align: center;font-size: 1vmax;margin-top: 1vmin;color: white;cursor: pointer;"id="appointmentManagement" >
+                        预约管理
+                    </div>
+                </div>
+                <div class="functions" style="margin-right: 5vw;">
+                    <div style="background-image: url(../../img/white/admins/systemAuthority.png);" class="functions_picture" >
+                    </div>
+                    <div style="text-align: center;font-size: 1vmax;margin-top: 1vmin;color: white;cursor: pointer;" id="security">
+                        系统权限
+                    </div>
+                </div>
+                
+            </div>
+            <!--具体表格-->
+            <div style="width: 80vw;height: 80vh;background-color: white;margin: 0 auto;display: flex;align-items: center;">
+                <div style="width: 70vw;height: 70vh;margin: 0 auto;display: flex; flex-direction: column" >
+                    <div style="width: 70vw;height: 65vh;background-color: #f2f3f5;" >
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>
+                                        用户名
+                                    </th>
+                                    <th>
+                                        书籍名
+                                    </th>
+                                    <th>
+                                        预约时间
+                                    </th>
+                                    <th>
+                                        馆藏地址
+                                    </th>
+                                    <th>
+                                        借阅开始时间
+                                    </th>
+                                    <th>
+                                        借阅到期时间
+                                    </th>
+                                    <th>
+                                        是否正在催还
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody id="tb" >
+                            </tbody>
+                        </table>
+                    </div>
+                    <div style="width: 70vw;height: 5vh;background-color: #f2f3f5; display: flex; flex-direction: column;font-size: 1vmax;" >
+                        <ul style="list-style: none;display: inline-flex;align-items: center;margin: 0 auto;padding: 0;" id="li_nav"  class="li_nav" >
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--底部导航栏-->
+    <div style="width: 100vw;height: 40vh;background-color:#181818;display: flex; align-items: center; justify-content: space-between;color: white; min-height: 190px;">
+        <div  style="height: 30vh; width: 35vw;margin-left: 15vw;">
+            <ul style="list-style: none;font-size: 2vmin;padding: 0;" >
+                <li style="margin-bottom: 2vh;">
+                    <span style="font-size: 5vmin;font-family: Georgia, 'Times New Roman', Times, serif;" >
+                       <a href="https://starlibrary.online" class="footer" >StarLibrary</a> 
+                    </span> 
+                </li>
+                <li class="li_footer">
+                    <span>
+                       © 2009-2019 <a href="https://starlibrary.online" class="footer" >starlibrary.com </a>版权所有
+                    </span> 
+                </li>
+                <li class="li_footer">
+                    <span>
+                        本网站仅供学习使用
+                    </span> 
+                </li>
+                <li class="li_footer">
+                    <span>
+                        ICP证：<a href="http://www.beian.miit.gov.cn" class="footer" >津ICP备20000024号</a> 
+                    </span>  
+                </li>
+                <li class="li_footer">
+                    <img src="../../img/备案图标.png" alt="" height="15px"  >
+                    <span>
+                        <a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?spm=5176.12825654.7y9jhqsfz.111.54212c4aBH6Hwq" class="footer">苏公网安备 32021402001231号</a> 
+                    </span> 
+                </li>
+            </ul>
+        </div>
+        <div  style="height: 30vh; width: 35vw;margin-right: 15vw; display: flex; justify-content: flex-end;">
+            <div style=" margin: 0 auto;margin-top: 5vh;font-size: 2vmin;">
+                <dl>
+                    <dt id="first" >
+                        本周开馆音乐：
+                    </dt>
+                    <dd>
+                        Xenogenesis
+                    </dd>
+                </dl>
+                <dl>
+                    <dt id="last"> 
+                        本周闭馆音乐：
+                    </dt>
+                    <dd>
+                        Dreamer
+                    </dd>
+                </dl>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="../../js/tools/jquery-3.4.1.js"></script>
+<script src="../../js/cookie.js"></script>
+<!--顶部导航栏和底部导航栏的js-->
+<script>
+//中文的日期
+    function startTime(){
+        var today=new Date();
+        var year=today.getFullYear();
+        var month=today.getMonth()+1;
+        var day=today.getDate();
+        var hours=today.getHours();
+        var minutes=today.getMinutes();
+        var seconds=today.getSeconds();// add a zero in front of numbers<10
+        minutes=checkTime(minutes);
+        seconds=checkTime(seconds);
+        $("#time").html(year+"年"+month+"月"+day+"日"+hours+":"+minutes+":"+seconds);
+        setInterval("startTime()",1000)
+    }
+    function checkTime(i){
+        if (i<10) {
+            i="0" + i;
+        }
+        return i;
+    }
+    //加载在这里！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！
+    $(document).ready(function(){
+        setInterval("startTime()",1000);
+        weeks();
+        checkCookie("adminName");
+    });
+    //这里是检查登录情况！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！
+    function checkCookie(cname){
+        var admin= getCookie(cname);
+        var nickName=getCookie("adminNickName");
+        if (admin != "") {
+            document.getElementById('loginCookie_check').innerHTML=nickName;
+        }else{
+            window.location.href="https://starlibrary.online/user/admin/login.html";
+        }
+    }
+    function weeks(){
+        var today=new Date();
+        var first_day=first(today);
+        var first_mouth=first_day.getMonth()+1;
+        first_mouth=checkTime(first_mouth);
+        var first_date=first_day.getDate();
+        first_date=checkTime(first_date);
+        var last_day=last(today);
+        var last_mouth=last_day.getMonth()+1;
+        last_mouth=checkTime(last_mouth);
+        var last_date=last_day.getDate();
+        last_date=checkTime(last_date);
+        document.getElementById('first').innerHTML="本周("+first_mouth+"."+first_date+"~"+last_mouth+"."+last_date+")开馆音乐：";
+        document.getElementById('last').innerHTML="本周("+first_mouth+"."+first_date+"~"+last_mouth+"."+last_date+")闭馆音乐：";
+    }
+    function first(today){
+        var week = today.getDay();
+        if(week==0){
+            week=7;
+        }
+        today.setDate(today.getDate()-week+1);
+        return today;
+    }
+    function last(today){
+        var week = today.getDay();
+        if(week==0){
+        week=7;
+        }
+        today.setDate(today.getDate()-week+7);
+        return today;
+    }
+</script>
+<!--分页-->
+<script>
+    //跳转到读者管理
+    $("#students").click(function(){
+        window.location.href="https://starlibrary.online/user/admin/students.html";
+    });
+    //跳转到书籍管理
+    $("#books").click(function(){
+        window.location.href="https://starlibrary.online/user/admin/books.html";
+    });
+    //跳转到预约管理
+    $("#appointmentManagement").click(function(){
+        window.location.href="https://starlibrary.online/user/admin/appointmentManagement.html";
+    });
+    //跳转到系统权限
+    $("#security").click(function(){
+        window.location.href="https://starlibrary.online/user/admin/root.html";
+    });
+    //跳转到借阅管理
+    $("#borrow").click(function(){
+        window.location.href="https://starlibrary.online/user/admin/borrowingManagement.html";
+    });
+    function change_page(Num){
+        $.ajax({
+        type:"get",
+        url:"https://starlibrary.online/penghao/bookBorrow/page",
+        dataType:"json",
+        data:{
+            type:1,
+            floor:getCookie("Floor2"),
+            pageNum:Num
+        },
+            success:function(response){
+                var list=response.data.list;
+                console.log(response);
+                $("#tb").empty();
+                for(var i=0;i<list.length;i++){
+                    var tableRow=$("<tr></tr>");
+                    tableRow.append("<th>"+list[i].userName+"</th>");
+                    tableRow.append("<th>"+list[i].bookName+"</th>");
+                    tableRow.append("<th>"+list[i].rgTime+"</th>");
+                    tableRow.append("<th>"+list[i].floor+"</th>");
+
+                    tableRow.append("<th>"+list[i].boTime+"</th>");
+                    tableRow.append("<th>"+list[i].unboTime+"</th>");
+                    if(list[i].recall==0){
+                        tableRow.append("<th>否</th>");
+                    }else if(list[i].recall==1){
+                        tableRow.append("<th>是</th>");
+                    }else{
+                        tableRow.append("<th>出错！</th>");
+                    }
+                    
+                    $("#tb").append(tableRow);
+                }
+                $("#li_nav").empty();
+                //分页导航
+                $("#li_nav").append("<li>&lsaquo;&lsaquo;</li>");
+                var pages=response.data.pages;
+                for(var i=1;i<=pages;i++){
+                    $("#li_nav").append("<li onclick='change_page("+i+")' id='#li"+i+"'>"+i+"</li>");
+                }
+                $("#li_nav").append("<li>&rsaquo;&rsaquo;</li>")
+            },error : function(XMLHttpRequest, textStatus, errorThrown) {
+                console.log(XMLHttpRequest.status);
+                console.log(XMLHttpRequest.readyState);
+                console.log(textStatus);
+            }
+        });
+    }
+    change_page(1);
+    
+</script>
+<!--超时js-->
+<script>
+    var lastTime = new Date().getTime();
+        var currentTime = new Date().getTime();
+        var timeOut = 20* 60 * 1000; //设置超时时间： 20分
+
+        $(function(){
+            /* 鼠标移动事件 */
+            $(document).mouseover(function(){
+                lastTime = new Date().getTime(); //更新操作时间
+
+            });
+        });
+
+        function testTime(){
+            currentTime = new Date().getTime(); //更新当前时间
+            if(currentTime - lastTime > timeOut){ //判断是否超时
+                window.location.href="https://starlibrary.online/timeout.html"
+            }
+        }
+
+        /* 定时器  间隔1秒检测是否长时间未操作页面  */
+        window.setInterval(testTime, 1000);
+</script>
+</html>

@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../css/anchor.css">
+    <link rel="stylesheet" type="text/css" href="../css/index.css">
+    <title>欢迎！</title>
+</head>
+<body>
+    <div class="content" ></div>
+    <div class="triangle-down"></div>
+    <!--右侧导航栏-->
+    <nav class="anchor-nav">
+        <p class="span_margin"><a class="anchor" href="#anchor1">search for books</a></p>
+        <p class="span_margin"><a class="anchor" href="#anchor2">new book recommendation</a></p>
+        <p class="span_margin"><a class="anchor" href="#anchor3">book classification</a></p>
+        <p class="span_margin"><a class="anchor" href="#anchor1">back to the top</a></p>
+    </nav>
+    <div style="width: 100vw;height: 100vh;background-image: url();background-repeat: no-repeat;background-size: cover;background-position: center;min-width: 600px;" id="anchor1">
+        <!--头部导航栏-->
+        <div style="width: 100vw;height: 12vh;display: flex; align-items: center;justify-content: space-between;min-width: 600px;">
+            <span style="font-size: 5vmin;margin-left:15vw;font-family: Georgia, 'Times New Roman', Times, serif;"><a href="../index.html" class="footer">StarLibrary</a> </span>
+            <div style="margin-right: 15vw;">
+                <ul style="list-style: none;margin: 0;padding: 0;display: flex;justify-content: flex-start; align-items: center;" >
+                    <div class="headPicture" style="background-image: url(../img/white/int.png);">
+                    </div>
+                    <li class="li_margin">
+                        <a href="../index.html" class="footer">中文</a>
+                    </li>
+                    <div class="headPicture" style="background-image: url(../img/white/time.png);">
+                    </div>
+                    <li class="li_margin">
+                        <a href="../clock.html" id="time" class="footer" id="time" >Beijing time</a>
+                    </li>
+                    <div class="headPicture" style="background-image: url(../img/white/user.png);" >
+                    </div>
+                    <li class="li_margin">
+                        <a  href="" class="footer" id="loginCookie_check" >login</a>
+                    </li>
+                    <div class="headPicture" style="background-image: url(../img/white/feedBack.png);" >
+                    </div>
+                    <li class="li_margin">
+                        <a href="feedBack.html" class="footer" >feedBack</a>
+                    </li>
+                    <div class="headPicture" style="background-image: url(../img/white/search.png);">
+                    </div>
+                </ul>
+            </div>
+        </div>
+        <!--搜索栏-->
+        <div style="width: 100vw;height: 55vh;min-width: 600px;">
+            <div style="width: 81vmin;height: 6vmin; margin: 15vh auto 0 auto;display: flex;align-items: center;border: 1px solid black;background-color: white;box-shadow: 10px 10px 10px #000000;">
+                <input type="text" id="keyBook" class="inputText" placeholder="search for books">
+                <input type="button" value="" class="inputTextButton" id="inputTextButton">
+            </div>
+            
+        </div>
+        <div style="width: 100vw;height: 18vh;display: flex;align-items: center;flex-direction: row-reverse; min-width: 600px;justify-content:center;">
+            <div style="width: 6vmin;height: 10vmin;display: flex;flex-direction: column;" id="anchor_h"  >
+                <div style="width: 4.5vmin;height: 4.5vmin;background-image: url(../img/white/information.png);background-position: center;background-repeat: no-repeat;background-size: cover;" id="tips" >
+                </div>
+                <div style="width: 5vmin;height: 3vmin;margin-top: 2vmin;text-align: center;">
+                    <span style="font-size: 2vmin;color: white;">detail</span>
+                </div>
+            </div>
+            <div style="width: 6vmin;height: 10vmin;margin-right: 8vmax;display: flex;flex-direction: column;cursor: pointer;" id="message">
+                <div style="width: 4.5vmin;height: 4.5vmin;background-image: url(../img/white/time.png);background-position: center;background-repeat: no-repeat;background-size: cover;">
+                </div>
+                <div style="width: 5vmin;height: 3vmin;margin-top: 2vmin;text-align: center;">
+                    <span style="font-size: 2vmin;color: white;">message</span>
+                </div>
+            </div>
+            <div style="width: 6vmin;height: 10vmin;margin-right: 8vmax;display: flex;flex-direction: column;cursor: pointer;" id="change_picture">
+                <div style="width: 4.5vmin;height: 4.5vmin;background-image: url(../img/white/change_picture.png);background-position: center;background-repeat: no-repeat;background-size: cover;">
+                </div>
+                <div style="width: 5vmin;height: 3vmin;margin-top: 2vmin;text-align: center;">
+                    <span style="font-size: 2vmin;color: white;">wallpaper</span>
+                </div>
+            </div>
+            <div style="width: 6vmin;height: 10vmin;margin-right: 8vmax;display: flex;flex-direction: column;cursor: pointer;" id="recommend">
+                <div style="width: 4.5vmin;height: 4.5vmin;background-image: url(../img/white/recommend.png);background-position: center;background-repeat: no-repeat;background-size: cover;">
+                </div>
+                <div style="width: 5vmin;height: 3vmin;margin-top: 2vmin;text-align: center;">
+                    <span style="font-size: 2vmin;color: white;">recommend</span>
+                </div>
+            </div>
+            <div style="width: 6vmin;height: 10vmin;margin-right: 8vmax;display: flex;flex-direction: column;cursor: pointer;" id="classification">
+                <div style="width: 4.5vmin;height: 4.5vmin;background-image: url(../img/white/classification.png);background-position: center;background-repeat: no-repeat;background-size: cover;">
+                </div>
+                <div style="width: 5vmin;height: 3vmin;margin-top: 2vmin;text-align: center;">
+                    <span style="font-size: 2vmin;color: white;">classification</span>
+                </div>
+            </div>
+            <div style="width: 6vmin;height: 10vmin;margin-right: 8vmax;display: flex;flex-direction: column;cursor: pointer;" id="backstage">
+                <div style="width: 4.5vmin;height: 4.5vmin;background-image: url(../img/white/backstage.png);background-position: center;background-repeat: no-repeat;background-size: cover;">
+                </div>
+                <div style="width: 5vmin;height: 3vmin;margin-top: 2vmin;text-align: center;">
+                    <span style="font-size: 2vmin;color: white;">Backstage</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--新书推荐-->
+    <div style="width: 100vw;height: 100vh;min-width: 600px;" id="anchor2">
+        <div style="width: 100vw;height: 10vh;background-color:#3aa3f9;display: flex;align-items: center;border: 1px solid blue;min-width: 600px;" >
+            <div style="margin-left: 10vw;font-size: 3vmin;">
+                new book recommendation
+            </div>
+        </div>
+
+
+
+
+        <div style="width: 100vw;height: 90vh;align-items: center;display: flex;background-color: #f2f3f5;min-width: 600px;">
+            <div style="width: 90vw;height: 80vh;display: flex;align-items: center;margin: 0 auto;background-color: #f2f3f5;">
+                <div style="width: 30vw;height: 70vh;display: flex;">
+                    <div style="width: 15vw;height: 70vh;display: flex;align-items: center;">
+                        <div style="width: 15vw;height: 19.5vw;background-image: url();background-position: center; background-color: #f2f3f5; background-size: cover;background-repeat: no-repeat;box-shadow: 10px 10px 7px #000000;" id="newBook0">
+
+                        </div>
+                    </div>
+                    <div style="width: 15vw;height: 70vh;display: flex;padding-left: 2vmax;justify-content: center;flex-direction: column;" id="book0">
+
+                    </div>
+                </div>
+                <div style="width: 30vw;height: 70vh;display: flex;">
+                    <div style="width: 15vw;height: 70vh;display: flex;align-items: center;">
+                        <div style="width: 15vw;height: 19.5vw;background-image: url();background-position: center; background-color: #f2f3f5;background-size: cover;background-repeat: no-repeat;box-shadow: 10px 10px 7px #000000;" id="newBook1">
+
+                        </div>
+                    </div>
+                    <div style="width: 15vw;height: 70vh;display: flex;padding-left: 2vmax;justify-content: center;flex-direction: column;" id="book1">
+
+                    </div>
+
+                </div>
+                <div style="width: 30vw;height: 70vh;display: flex;">
+                    <div style="width: 15vw;height: 70vh; display: flex;align-items: center;" id="newBook1">
+                        <div style="width: 15vw;height: 19.5vw;background-image: url();background-position: center;background-color: #f2f3f5; background-size: cover;background-repeat: no-repeat;box-shadow: 10px 10px 7px #000000;" id="newBook2">
+
+                        </div>
+                    </div>
+                    <div style="width: 15vw;height: 70vh;display: flex;padding-left: 2vmax; justify-content: center;flex-direction: column;" id="book2">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+    </div>
+    <div style="width: 100vw;height: 100vh;min-width: 600px;" id="anchor3" >
+        <div style="width: 100vw;height: 10vh;background-color:#3aa3f9;display: flex;align-items: center;border: 1px solid blue;min-width: 600px;" >
+            <div style="margin-left: 10vw;font-size: 3vmin;">
+                Book classification
+            </div>
+        </div>
+        <div style="width: 100vw;height: 90vh;align-items: center;display: flex;background-color: #f2f3f5;min-width: 600px;justify-content: space-around;" id="bookTypes">
+            <div style="width: 20vw;height: 50vh;background-color: skyblue;text-align: center;display: flex;align-items: center;cursor: pointer;"onclick="type('想象文学书籍')">
+                <span style="margin: 0 auto;font-size: 5vmin;">Imaginary Literature Books</span>
+            </div>
+            <div style="width: 20vw;height: 50vh;background-color: orangered;text-align: center;display: flex;align-items: center;cursor: pointer;" onclick="type('论说类书籍')">
+                <span style="margin: 0 auto;font-size: 5vmin;">Talking Books</span>
+            </div>
+            <div style="width: 20vw;height: 50vh;background-color: red;text-align: center;display: flex;align-items: center;cursor: pointer;" onclick="type('咨询类书籍')">
+                <span style="margin: 0 auto;font-size: 5vmin;">Consulting Books</span>
+            </div>
+            <div style="width: 20vw;height: 50vh;background-color: blue;text-align: center;display: flex;align-items: center;cursor: pointer;" onclick="type('更多类别')"> 
+                <span style="margin: 0 auto;font-size: 5vmin;">More categories</span>
+            </div>
+        </div>
+    </div>
+    <!--底部导航栏-->
+    <div style="width: 100vw;height: 40vh;background-color:#181818;display: flex; align-items: center; justify-content: space-between;color: white; min-height: 190px;min-width: 600px;">
+    <div  style="height: 30vh; width: 35vw;margin-left: 15vw;">
+        <ul style="list-style: none;font-size: 2vmin;padding: 0;" >
+            <li style="margin-bottom: 2vh;">
+                <span style="font-size: 5vmin;font-family: Georgia, 'Times New Roman', Times, serif;" >
+                   <a href="https://starlibrary.online" class="footer" >StarLibrary</a> 
+                </span> 
+            </li>
+            <li class="li_footer">
+                <span>
+                   © 2020-2021 <a href="https://starlibrary.online" class="footer" >starlibrary.com </a>all rights reserved
+                </span> 
+            </li>
+            <li class="li_footer">
+                <span>
+                    This site is for learning use only
+                </span> 
+            </li>
+            <li class="li_footer">
+                <span>
+                    ICP证：<a href="http://www.beian.miit.gov.cn" class="footer" >津ICP备20000024号</a> 
+                </span>  
+            </li>
+            <li class="li_footer">
+                <img src="../img/备案图标.png" alt="" height="15px"  >
+                <span>
+                    <a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?spm=5176.12825654.7y9jhqsfz.111.54212c4aBH6Hwq" class="footer">苏公网安备 32021402001231号</a> 
+                </span> 
+            </li>
+        </ul>
+    </div>
+    <div  style="height: 30vh; width: 35vw;margin-right: 15vw; display: flex; justify-content: flex-end;">
+        <div style=" margin: 0 auto;margin-top: 5vh;font-size: 2vmin;">
+            <dl>
+                <dt id="first" >
+                    Music opening this week:
+                </dt>
+                <dd>
+                    Xenogenesis
+                </dd>
+            </dl>
+            <dl>
+                <dt id="last"> 
+                    Music closed this week:
+                </dt>
+                <dd>
+                    Dreamer
+                </dd>
+            </dl>
+        </div>
+    </div>
+    </div>
+</body>
+<script src="../js/tools/jquery-3.4.1.js"></script>
+<script src="../js/cookie.js"></script>
+<!--顶部导航栏和底部导航栏的js-->
+<script>
+    //中文的日期
+    function startTime(){
+        var today=new Date();
+        var year=today.getFullYear();
+        var month=today.getMonth()+1;
+        var day=today.getDate();
+        var hours=today.getHours();
+        var minutes=today.getMinutes();
+        var seconds=today.getSeconds();// add a zero in front of numbers<10
+        minutes=checkTime(minutes);
+        seconds=checkTime(seconds);
+        month=en_mouth(month);
+        $("#time").html(month+" "+day+" , "+year+" "+hours+":"+minutes+":"+seconds);
+        setInterval("startTime()",1000)
+    }
+    function checkTime(i){
+        if (i<10) {
+            i="0" + i;
+        }
+        return i;
+    }
+    
+    //加载在这里！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！
+    $(document).ready(function(){
+        setInterval("startTime()",1000);
+        weeks();
+        checkCookie("userName");
+    });
+    //这里是检查登录情况！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！
+    function checkCookie(cname){
+        var user = getCookie(cname);
+        var nickName=getCookie("nickName");
+        if (user != "") {
+            document.getElementById('loginCookie_check').innerHTML=nickName;
+            document.getElementById('loginCookie_check').href="https://starlibrary.online/user/message.html";
+        }else{
+            document.getElementById('loginCookie_check').href="https://starlibrary.online/user/login.html";
+        }
+    }
+    function weeks(){
+        var today=new Date();
+        var first_day=first(today);
+        var first_mouth=first_day.getMonth()+1;
+        first_mouth=checkTime(first_mouth);
+        var first_date=first_day.getDate();
+        first_date=checkTime(first_date);
+        var last_day=last(today);
+        var last_mouth=last_day.getMonth()+1;
+        last_mouth=checkTime(last_mouth);
+        var last_date=last_day.getDate();
+        last_date=checkTime(last_date);
+        document.getElementById('first').innerHTML="This week's ("+first_mouth+"."+first_date+"~"+last_mouth+"."+last_date+")opening music:";
+        document.getElementById('last').innerHTML="This week's ("+first_mouth+"."+first_date+"~"+last_mouth+"."+last_date+") closing music:";
+    }
+    function first(today){
+        var week = today.getDay();
+        if(week==0){
+            week=7;
+        }
+        today.setDate(today.getDate()-week+1);
+        return today;
+    }
+    function last(today){
+        var week = today.getDay();
+        if(week==0){
+        week=7;
+        }
+        today.setDate(today.getDate()-week+7);
+        return today;
+    }
+    /** 
+ * mouth数字转英语
+*/
+function en_mouth(en_month){
+    if(en_month==1){
+        en_month="January";
+    }
+    else if(en_month==2){
+        en_month="February";
+    }
+    else if(en_month==3){
+        en_month="March";
+    }
+    else if(en_month==4){
+        en_month="April";
+    }
+    else if(en_month==5){
+        en_month="May";
+    }
+    else if(en_month==6){
+        en_month="June";
+    }
+    else if(en_month==7){
+        en_month="July";
+    }
+    else if(en_month==8){
+        en_month="August";
+    }
+    else if(en_month==9){
+        en_month="September";
+    }
+    else if(en_month==10){
+        en_month="October";
+    }
+    else if(en_month==11){
+        en_month="November";
+    }
+    else if(en_month==12){
+        en_month="December";
+    }
+    else{
+        en_month="错误！";
+    }
+    return en_month;
+}
+if(getCookie('urlPicture')!=""){
+        $("#anchor1").css("background-image","url("+getCookie('urlPicture')+")");
+        $("#tips").attr("title",getCookie('contentPicture'));
+    }else{
+        setCookie("contentPicture","风景图",360);
+        setCookie("urlPicture","https://starlibrary.online/image/123.jpg",360);
+        $("#anchor1").css("background-image","url("+getCookie('urlPicture')+")");
+    }
+</script>
+<!--超时js-->
+<script>
+    var lastTime = new Date().getTime();
+        var currentTime = new Date().getTime();
+        var timeOut = 20* 60 * 1000; //设置超时时间： 20分
+
+        $(function(){
+            /* 鼠标移动事件 */
+            $(document).mouseover(function(){
+                lastTime = new Date().getTime(); //更新操作时间
+
+            });
+        });
+
+        function testTime(){
+            currentTime = new Date().getTime(); //更新当前时间
+            if(currentTime - lastTime > timeOut){ //判断是否超时
+                window.location.href="https://starlibrary.online/timeout.html"
+            }
+        }
+
+        /* 定时器  间隔1秒检测是否长时间未操作页面  */
+        window.setInterval(testTime, 60000);
+</script>
+<!--跳转js-->
+<script>
+    $("#message").click(function(){
+        window.location.href="user/message.html";
+    });
+    $("#change_picture").click(function(){
+        window.location.href="user/changePicture.html";
+    });
+    $("#recommend").click(function(){
+        window.location.href="#anchor2"
+    });
+    $("#classification").click(function(){
+        window.location.href="#anchor3"
+    });
+    $("#backstage").click(function(){
+        window.location.href="https://starlibrary.online/user/admin/books.html"
+    });
+</script>
+<!--获取三个图片及最新的三本书-->
+<script>
+    function type(type){
+        if(type=="更多类别"){
+            $("#bookTypes").empty();
+            $("#bookTypes").append('<div style="width: 20vw;height: 50vh;background-color: skyblue;text-align: center;display: flex;align-items: center;cursor: pointer;"onclick="type(\'返回\')"><span style="margin: 0 auto;font-size: 5vmin;">back</span></div><div style="width: 20vw;height: 50vh;background-color: orangered;text-align: center;display: flex;align-items: center;cursor: pointer;" onclick="type(\'说明规则类书籍\')"><span style="margin: 0 auto;font-size: 5vmin;">Explaining rules books</span></div><div style="width: 20vw;height: 50vh;background-color: red;text-align: center;display: flex;align-items: center;cursor: pointer;" onclick="type(\'人物传记书籍\')"><span style="margin: 0 auto;font-size: 5vmin;">Biographical Books</span></div><div style="width: 20vw;height: 50vh;background-color: blue;text-align: center;display: flex;align-items: center;cursor: pointer;" onclick="type(\'工具书\')"> <span style="margin: 0 auto;font-size: 5vmin;">reference book</span></div>')
+        }else if(type=="返回"){
+            $("#bookTypes").empty();
+            $("#bookTypes").append('<div style="width: 20vw;height: 50vh;background-color: skyblue;text-align: center;display: flex;align-items: center;cursor: pointer;"onclick="type(\'想象文学书籍\')"><span style="margin: 0 auto;font-size: 5vmin;">Imaginary Literature Books</span></div><div style="width: 20vw;height: 50vh;background-color: orangered;text-align: center;display: flex;align-items: center;cursor: pointer;" onclick="type(\'论说类书籍\')"><span style="margin: 0 auto;font-size: 5vmin;">Talking Books</span></div><div style="width: 20vw;height: 50vh;background-color: red;text-align: center;display: flex;align-items: center;cursor: pointer;" onclick="type(\'咨询类书籍\')"><span style="margin: 0 auto;font-size: 5vmin;">Consulting Books</span></div><div style="width: 20vw;height: 50vh;background-color: blue;text-align: center;display: flex;align-items: center;cursor: pointer;" onclick="type(\'更多类别\')"> <span style="margin: 0 auto;font-size: 5vmin;">More categories</span></div>')
+        }else{
+            setCookie("keyBook",type,1);
+            window.location.href="https://starlibrary.online/books/result.html";
+        }
+    }
+    function setClick(bookId,i){
+        $("#newBook"+i).click(function(){
+                setCookie("keyInform",bookId,7);
+                window.open('https://starlibrary.online/books/introdution.html');
+        })
+    }
+    //获取三本书的信息
+    $.ajax({
+        type:"get",
+        dataType:"json",
+        url:"https://starlibrary.online/penghao/book/querybook",
+        data:{
+            tab:1,
+            pageNum:1
+        },
+        success:function(response){
+            console.log(response);//打印服务端返回的数据(调试用)
+            if (response.status==200) {
+                var list=response.data.list;
+                for(var i=0;i<=2;i++){
+                    $("#book"+i).append("<p>书名："+list[i].bookName+"</p>");
+                    $("#book"+i).append("<p>著者："+list[i].bookAuthor+"</p>");
+                    $("#book"+i).append("<p>出版社："+list[i].bookPublish+"</p>");
+                    $("#book"+i).append("<p>馆藏地址："+list[i].bookPlace+"</p>");
+                    $("#book"+i).append("<p>书籍类型："+list[i].type+"</p>");
+                    $("#newBook"+i).css("background-image","url("+list[i].src+")");
+                    $("#newBook"+i).css("cursor","pointer");
+                    setClick(list[i].bookId,i);
+                }
+            }else if(response.status==404){
+                alert(response.msg);
+            }else{
+                alert("系统错误！错误码："+response);
+            }
+        },
+        error : function(XMLHttpRequest, textStatus, errorThrown){
+            console.log(XMLHttpRequest.status);
+            console.log(XMLHttpRequest.readyState);
+            console.log(textStatus);
+        }
+    });
+</script>
+<!--设置搜索及壁纸-->
+<script>
+    $("#inputTextButton").click(function(){
+        setCookie("keyBook",$("#keyBook").val(),"7");
+        window.open("https://starlibrary.online/books/result.html");  
+    });
+    if(getCookie('urlPicture')!=""){
+        $("#anchor1").css("background-image","url("+getCookie('urlPicture')+")");
+        $(".content").append(getCookie('contentPicture'));
+    }else{
+        $.ajax({
+            type:"get",
+            url:"https://api.berryapi.net/",
+            dataType:"json",
+            data:{
+                service:"App.Dairy.Story",
+                app_key:"RiLG0c4SBK35AFiM"
+            },
+            success:function(response){
+                console.log(response);
+                setCookie("urlPicture","https://api.berryapi.net/?service=App.Image.Agent&app_key=ecQAWdNfKDsaEyvu&url="+response.data.cover,1);
+                setCookie("contentPicture",response.data.content,1);
+                $("#anchor1").css("background-image","url("+getCookie('urlPicture')+")");
+                $(".content").append("&nbsp;&nbsp;&nbsp;&nbsp;"+getCookie('contentPicture'));
+            },
+            error : function(XMLHttpRequest, textStatus, errorThrown){
+                console.log(XMLHttpRequest.status);
+                console.log(XMLHttpRequest.readyState);
+                console.log(textStatus);
+            }
+        });
+    }
+    //鼠标的移入移出操作
+    $('#anchor_h').mouseenter(function(){
+        $(".content").css("display","block");
+        $(".triangle-down").css("display","block");
+    });
+    $('#anchor_h').mouseleave(function(){
+        $(".content").css("display","none");
+        $(".triangle-down").css("display","none");
+    });
+</script>
+</html>

@@ -1,0 +1,41 @@
+body{
+    margin:0;
+    padding:0;
+    overflow-y:scroll;
+    overflow-x:hidden;
+}
+.headPicture{
+    width: 2vmin;
+    height: 2vmin;
+    background-repeat: no-repeat;
+    background-position: center; 
+    background-size: cover; 
+    min-width:5px;
+    min-height: 5px;
+}
+.li_margin{
+    margin-right: 0.5vw;
+    font-size: 2vmin;
+}
+.li_footer{
+    margin-top: 1vh;
+    font-size: 2vmin;
+}
+.span_margin{
+    margin: 0;
+    margin-bottom: 20px;
+    font-size: 1vmax;
+}
+.adminInput{
+    width: 20vw;
+    height: 3.5vh;
+    font-size: 2vmin;
+}
+.adminInputButton{
+    width: 20vw;
+    height: 4vh;
+    color: springgreen;
+    font-size: 2vmin;
+    border-radius: 3px;
+    background-color: orangered;
+}

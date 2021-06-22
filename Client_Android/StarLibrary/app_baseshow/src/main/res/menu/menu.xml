@@ -1,0 +1,14 @@
+<menu
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/message"
+        android:icon="@drawable/message_base"
+        app:showAsAction="ifRoom"
+        android:title="@string/message" />
+    <item
+        android:id="@+id/scan"
+        android:title="@string/scan"
+        android:icon="@drawable/ic_add"
+        app:showAsAction="ifRoom"/>
+</menu>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="bookPlaces">
+        <item>1A</item>
+        <item>1B</item>
+        <item>3C</item>
+        <item>4D</item>
+        <item>5E</item>
+        <item>6F</item>
+    </string-array>
+    <string-array name="types">
+        <item>想象文学书籍</item>
+        <item>论说类书籍 </item>
+        <item>咨询类书籍</item>
+        <item>说明规则类书籍</item>
+        <item>人物传记书籍</item>
+        <item>工具书</item>
+    </string-array>
+</resources>

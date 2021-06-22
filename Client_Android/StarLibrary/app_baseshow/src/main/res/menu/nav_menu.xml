@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_account"
+            android:icon="@drawable/ic_account"
+            android:title="账号管理" />
+        <item
+            android:id="@+id/nav_reserving"
+            android:icon="@drawable/ic_order_reserving"
+            android:title="预约中的订单" />
+        <item
+            android:id="@+id/nav_borrowing"
+            android:icon="@drawable/ic_order_borrowing"
+            android:title="借阅中的订单" />
+        <item
+            android:id="@+id/nav_finish"
+            android:icon="@drawable/ic_order_finish"
+            android:title="已还的订单" />
+        <item
+            android:id="@+id/nav_overtime"
+            android:icon="@drawable/ic_order_overtime"
+            android:title="超时的订单" />
+        <item
+            android:id="@+id/nav_seecar"
+            android:icon="@drawable/ic_seecar"
+            android:title="查看收藏" />
+        <item
+            android:id="@+id/nav_bind"
+            android:icon="@drawable/ic_bind"
+            android:title="绑定图书证" />
+        <item
+            android:id="@+id/nav_yue"
+            android:icon="@drawable/ic_edityue"
+            android:title="阅书圈" />
+        <item
+            android:id="@+id/nav_about"
+            android:icon="@drawable/ic_about"
+            android:title="关于我们" />
+    </group>
+</menu>

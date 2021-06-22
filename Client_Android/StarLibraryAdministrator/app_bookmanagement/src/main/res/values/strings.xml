@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">app_bookManagement</string>
+    <string name="search_tip">按书名搜索（自身楼层）</string>
+</resources>

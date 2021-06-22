@@ -1,0 +1,48 @@
+<head>
+<meta charset="utf-8" />
+<title>注册与授权</title>
+<script type="text/javascript">
+function MM_popupMsg(msg) { //v1.0
+  alert(msg);
+}
+function MM_openBrWindow(theURL,winName,features) { //v2.0
+  window.open(theURL,winName,features);
+}
+</script>
+</head>
+<body>
+<form action="#" method="get">
+	<div align="center">用户名：
+	<input type="text" name="user" /><br />
+	密码：<input type="password" name="pass" /><br />
+	性别：男
+	<input type="radio" name="sex" value="1" checked="checked"/>
+	女<input type="radio" name="sex" value="0" /><br />
+	爱好：
+	打篮球<input type="checkbox" name="likes" value="打篮球" />
+	游泳<input type="checkbox" name="likes" value="游泳" />
+	中国象棋<input type="checkbox" name="likes" value="中国象棋" /><br />
+	所在城市：
+	<select name="city">
+	  <option value="北京">北京</option>
+	  <option value="上海">上海</option>
+	  <option value="乌鲁木齐">乌鲁木齐</option>
+	  </select>
+	<br />
+	个人介绍：<br />
+	<textarea cols="30" rows="3"></textarea>
+	<br />
+	<input type="submit" onClick="MM_popupMsg('注册成功');MM_openBrWindow('../index.html','','')" value="注册" />
+	<input type="reset" onClick="MM_popupMsg('重置成功')" value="重置" />
+	</div>
+</form>
+<form>
+	<div align="center">留言：<br />
+	  <textarea cols="30" rows="3"></textarea>
+	<br />
+	<input type="submit" onClick="MM_popupMsg('提交成功')" value="提交" />
+	<input type="reset" onClick="MM_popupMsg('重置成功')" value="重置" />
+	</div>
+</form>
+</body>
+</html>

@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">app_login</string>
+    <string name="retrievePassword">忘记密码</string>
+    <string name="cbRemPass">记住密码</string>
+    <string name="register">注册账号</string>
+    <string name="hint_pass">请输入密码</string>
+    <string name="hint_account">请输入用户名</string>
+    <string name="userName_re">用户名：</string>
+    <string name="userPass_re">新密码：</string>
+    <string name="userPhone_re">手机号：</string>
+    <string name="forget_login">找回密码</string>
+    <string name="backToLogin">返回登录</string>
+</resources>

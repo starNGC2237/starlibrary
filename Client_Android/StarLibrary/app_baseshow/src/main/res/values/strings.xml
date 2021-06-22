@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">app_baseShow</string>
+    <string name="scan">扫一扫</string>
+    <string name="showInfo">展示个人信息</string>
+    <string name="message">信息</string>
+    <string name="text_label_2">查询</string>
+    <string name="text_label_4">更多</string>
+    <string name="text_label_1">首页</string>
+    <string name="text_label_3">订单</string>
+    <string name="about_us">关于我们</string>
+    <string name="search_base">搜索</string>
+    <string name="book_search_tip">没有找到书籍哦</string>
+    <string name="warning_info_about">© 2020-2021 starlibrary.online 版权所有\n本APP仅供学习使用</string>
+    <string name="features_about">功能介绍</string>
+    <string name="check_new_about">检查新版本</string>
+    <string name="channel_description">消息</string>
+    <string name="channel_name">消息1</string>
+</resources>

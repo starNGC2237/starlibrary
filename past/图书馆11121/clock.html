@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge,chrome=1">
+    <title>Document</title>
+</head>
+<body style="margin: 0;" >
+    <div style="width: 100vw;height: 100vh; background-image: url(); background-position: center; background-size: cover; margin: 0 auto;display: flex;align-items: center;" id="anchor1">
+        <div style="margin: 0 auto; color: orangered;text-align: center;">
+            <p style="font-size: 3vmax;" >猜猜现在几点了？</p>
+            <span id="time" style="font-size: 8vmax;" >我是默认文字看不见我</span>
+        </div>
+    </div>
+</body>
+<script src="js/tools/jquery-3.4.1.js"></script>
+<script>
+    //加载在这里！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！
+    $(document).ready(function(){
+        setInterval("startTime()",1000);
+    });
+    function startTime(){
+        var today=new Date();
+        var year=today.getFullYear();
+        var month=today.getMonth()+1;
+        var day=today.getDate();
+        var hours=today.getHours();
+        var minutes=today.getMinutes();
+        var seconds=today.getSeconds();// add a zero in front of numbers<10
+        minutes=checkTime(minutes);
+        seconds=checkTime(seconds);
+        document.getElementById('time').innerHTML=year+"年"+month+"月"+day+"日"+hours+":"+minutes+":"+seconds;
+        setInterval("startTime()",1000);
+    }
+    function checkTime(i){
+        if (i<10) {
+            i="0" + i;
+        }
+        return i;
+    }
+    
+    if(getCookie('urlPicture')!=""){
+        $("#anchor1").css("background-image","url("+getCookie('urlPicture')+")");
+
+    }else{
+        setCookie("contentPicture","风景图",360);
+        setCookie("urlPicture","https://api.qqsuu.cn/api/img",360);
+        $("#anchor1").css("background-image","url("+getCookie('urlPicture')+")");
+    }
+</script>
+
+</html>

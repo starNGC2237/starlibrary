@@ -1,0 +1,81 @@
+body{
+    margin:0;
+    padding:0;
+    overflow-y:scroll;
+    overflow-x:hidden;
+}
+.headPicture{
+    width: 2vmin;
+    height: 2vmin;
+    background-repeat: no-repeat;
+    background-position: center; 
+    background-size: cover; 
+    min-width:5px;
+    min-height: 5px;
+}
+.li_margin{
+    margin-right: 0.5vw;
+    font-size: 2vmin;
+}
+.li_footer{
+    margin-top: 1vh;
+    font-size: 2vmin;
+}
+.span_margin{
+    margin: 0;
+    margin-bottom: 20px;
+    font-size: 1vmax;
+}
+#li_result li{
+    border: 1px solid #eee;
+    background-color: white;
+    width: 3vmin;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: orangered;
+}
+.search_bookName{
+    width: 35vw;
+    height: 4vh;
+    padding: 0.25vh;
+    font-size: 1.75vmin;
+}
+.search_bookName_button{
+    width: 5vw;
+    height: 5vh;
+    padding: 0.25vh;
+    background-color: #4185F5;
+    font-size: 1.5vmin;
+    border-radius: 5px;
+}
+#content div{
+    width: 60vw;
+    height: 20vh;
+    margin: 0 auto;
+    background-color: #4185F5;
+    margin-top: 6vh;
+    display: flex;
+    align-items: center;
+}
+#content div table{
+    margin-left: 3vw;
+}
+#content div table tbody tr th{
+    text-align: left;
+}
+.input_b{
+    width: 15vw;
+    height: 3vh;
+    margin-bottom: 2vh;
+}
+.input_bu{
+    width: 4vw;
+    height: 3vh;
+    margin-top: 2vw;
+}
+.input_te{
+    width: 15vw;
+    height: 3vh;
+    margin-bottom: 2vh;
+}

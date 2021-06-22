@@ -1,0 +1,73 @@
+body{
+    margin:0;
+    padding:0;
+    overflow-y:scroll;
+    overflow-x:hidden;
+}
+.headPicture{
+    width: 2vmin;
+    height: 2vmin;
+    background-repeat: no-repeat;
+    background-position: center; 
+    background-size: cover; 
+    min-width:5px;
+    min-height: 5px;
+}
+.li_margin{
+    margin-right: 0.5vw;
+    font-size: 2vmin;
+}
+.li_footer{
+    margin-top: 1vh;
+    font-size: 2vmin;
+}
+.span_margin{
+    margin: 0;
+    margin-bottom: 5vmin;
+    font-weight: bolder;
+}
+.inputText{
+    width: 75vmin;
+    height: 5vmin;
+    border: none;
+    outline:none;
+    padding:3px;
+    font-size:1.5vmin;
+}
+.inputTextButton{
+    width: 5.5vmin;
+    height: 5.5vmin;
+    font-size: 1.5vmin;
+    background-image: url(../img/search.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    border: 6px solid transparent;
+    background-color: white;
+    cursor: pointer;
+}
+.content{
+    position: absolute;
+    right: 19vmax;
+    bottom: 18vmin;
+    width: 20vmax;
+    text-align: left;
+    background-color: #0094ff;
+    border-radius:1vmin;
+    box-shadow: 7px 8px 16px 0px black;
+    min-height: 50px;
+    font-size: 2vmin;
+    padding: 1vmin;
+    display: none;
+}
+.triangle-down{
+    width: 0;
+    height: 0;
+    border-left: 2vmin solid transparent;
+    border-right: 2vmin solid transparent;
+    border-top: 3vmin solid #0094ff;
+    position: absolute;
+    right: 21vmax;
+    bottom: 15vmin;
+    display: none;
+}

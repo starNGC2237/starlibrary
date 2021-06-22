@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:id="@+id/book_sudi_item"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="10dp"
+    android:layout_marginEnd="10dp"
+    android:layout_marginTop="3dp"
+    android:layout_marginBottom="1dp"
+    android:padding="5dp"
+    android:background="@color/white"
+    android:orientation="horizontal"
+    android:elevation="@dimen/cardview_compat_inset_shadow">
+    <ImageView
+        android:id="@+id/bookImage_sudi"
+        android:layout_width="85dp"
+        android:layout_height="105dp"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_vertical"
+        android:orientation="vertical">
+        <TextView
+            android:id="@+id/bookName_sudi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:textSize="18sp"
+            android:layout_marginBottom="3dp"
+            android:textColor="?android:textColor"/>
+        <TextView
+            android:id="@+id/bookAuthor_sudi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="12sp"
+            android:layout_marginStart="10dp"/>
+        <TextView
+            android:id="@+id/reviewNumber_sudi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="12sp"
+            android:layout_marginStart="10dp"/>
+    </LinearLayout>
+</LinearLayout>
